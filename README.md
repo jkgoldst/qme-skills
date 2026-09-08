@@ -8,25 +8,27 @@ These skills are designed to help physicians and practices use AI for repetitive
 
 ## Try the first skill
 
-Install from this repository with the standard skills installer:
+Site: **[qmeaihero.com](https://qmeaihero.com)** (Stage 01 · Safe Environment).
 
-```bash
-npx skills@latest add jkgoldst/qme-skills
-```
-
-Then run:
+**In Claude (no terminal).** Download [`qme-env-audit.zip`](./docs/qme-env-audit.zip), then in Claude open *Settings → Capabilities → Skills* and upload it. Needs a Pro, Max, Team, or Enterprise plan with code execution enabled. Start a new chat and type:
 
 ```text
 /qme-env-audit
 ```
 
-For a codebase- or infrastructure-backed review:
+**In Claude Code, Codex, or another skill-aware agent.** Install from this repository with the standard skills installer:
+
+```bash
+npx skills@latest add jkgoldst/qme-skills
+```
+
+Then run `/qme-env-audit`, or for a codebase- or infrastructure-backed review:
 
 ```text
 /qme-env-audit --technical
 ```
 
-> The repository is currently in early development. Installation is intended to be tested across supported agent environments before the first public release.
+Run the audit *before* you put real case data into whichever account you install it in — the audit will tell you whether that account is fit for it.
 
 ## Why QME Skills Exist
 
@@ -50,36 +52,34 @@ It walks through the actual environment, follows PHI through the system, disting
 
 ## Skills
 
-The collection is organized around the QME lifecycle:
+The collection is organized into five **Stages** — the order a physician meets them, not the order they were built:
 
-**Orient → Master the record → Examine → Reason → Write → Defend**
+**01 Safe Environment → 02 Master the Record → 03 Find What Matters → 04 Prepare the Physician → 05 Defend the Report**
 
-### Security & setup
+### 01 · Safe Environment
 
 - **[`/qme-env-audit`](./skills/qme-env-audit/SKILL.md)** — Audit the environment used to handle QME case data with AI. **Available**
+- **`/qme-env-setup`** — Build a safe environment step by step, walking the physician through the parts only they can do (accounts, agreements, storage). The audit checks a setup; this one creates it. *Planned*
 
-### Understand the case
+### 02 · Master the Record
 
 - **`/orient-case`** — Create a compact case map from the packet and cover letters. *Planned*
 - **`/build-chronology`** — Build a source-backed medical/legal timeline. *Planned*
 - **`/summarize-records`** — Summarize records into a consistent QME-oriented structure. *Planned*
 
-### Investigate
+### 03 · Find What Matters
 
 - **`/find-conflicts`** — Find contradictions across records, history, exam, and draft. *Planned*
-- **`/prep-evaluation`** — Identify patient-specific issues and questions to clarify during the evaluation. *Planned*
 - **`/find-evidence`** — Surface the strongest supporting and conflicting evidence for a question or conclusion. *Planned*
-
-### Reason
-
 - **`/reason-about-causation`** — Assemble an evidence map for industrial causation; the physician decides. *Planned*
 - **`/reason-about-apportionment`** — Assemble candidate contributing factors and evidence; the physician decides. *Planned*
 
-### Write
+### 04 · Prepare the Physician
 
+- **`/prep-evaluation`** — Identify patient-specific issues and questions to clarify during the evaluation. *Planned*
 - **`/draft-from-findings`** — Turn physician-approved findings into source-linked prose. *Planned*
 
-### Review & defend
+### 05 · Defend the Report
 
 - **`/completeness-review`** — Check whether required questions and report elements are addressed. *Planned*
 - **`/substantial-evidence-review`** — Challenge whether opinions are adequately supported by the record and reasoning. *Planned*
@@ -177,6 +177,11 @@ The goal is to catch regressions such as:
 ```text
 qme-skills/
 ├── README.md
+├── docs/                      # the site (GitHub Pages) + downloadable skill zips
+│   ├── index.html
+│   └── qme-env-audit.zip      # built by scripts/build-skill-zip.sh
+├── scripts/
+│   └── build-skill-zip.sh
 ├── skills/
 │   └── qme-env-audit/
 │       ├── SKILL.md
