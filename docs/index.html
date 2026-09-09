@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QME AI Hero — /qme-env-audit · open skills for California QMEs</title>
+<meta name="description" content="Audit your QME AI setup before using real case data. An open skill for California Qualified Medical Evaluators.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+  // Apply the saved theme before first paint to avoid a flash.
+  (function () {
+    try {
+      var t = localStorage.getItem('qme-theme');
+      if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<!-- DESKTOP RAIL -->
+<nav class="rail" aria-label="Stages">
+  <div class="brand">QME AI Hero</div>
+  <ol class="stages">
+    <li class="stage active"><span class="num">01</span><span class="name">Safe Environment</span></li>
+    <li class="stage"><span class="num">02</span><span class="name">Master the Record</span></li>
+    <li class="stage"><span class="num">03</span><span class="name">Find What Matters</span></li>
+    <li class="stage"><span class="num">04</span><span class="name">Prepare the Physician</span></li>
+    <li class="stage"><span class="num">05</span><span class="name">Defend the Report</span></li>
+  </ol>
+  <div class="rail-foot">open skills for<br>California QMEs</div>
+</nav>
+
+<!-- MOBILE TOP BAR -->
+<header class="topbar">
+  <div class="topbar-row">
+    <div class="brand">QME AI Hero</div>
+    <button class="btn-outline" id="mobile-nav-toggle" aria-expanded="false" aria-controls="mobile-nav">Safe Environment ▾</button>
+  </div>
+  <ol class="stages mobile-nav" id="mobile-nav" hidden>
+    <li class="stage active"><span class="num">01</span><span class="name">Safe Environment</span></li>
+    <li class="stage"><span class="num">02</span><span class="name">Master the Record</span></li>
+    <li class="stage"><span class="num">03</span><span class="name">Find What Matters</span></li>
+    <li class="stage"><span class="num">04</span><span class="name">Prepare the Physician</span></li>
+    <li class="stage"><span class="num">05</span><span class="name">Defend the Report</span></li>
+  </ol>
+</header>
+
+<main class="main">
+
+  <!-- top chrome -->
+  <div class="chrome">
+    <a href="https://github.com/jkgoldst/qme-skills" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://github.com/jkgoldst/qme-skills#readme" target="_blank" rel="noopener">About</a>
+    <button class="btn-pill" id="theme-toggle" aria-label="Toggle dark mode">Dark</button>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="eyebrow">STAGE 01 · SAFE ENVIRONMENT</div>
+    <div class="cmd">/qme-env-audit</div>
+    <h1>Audit your QME AI setup before using real case data.</h1>
+    <p class="lede">This skill helps you see exactly where case data goes, what can be independently verified right now, and what needs fixing before you rely on the environment for real evaluations.</p>
+
+    <div class="cta-row">
+      <a class="btn-primary" href="#install">Install /qme-env-audit</a>
+      <a class="btn-outline" href="https://github.com/jkgoldst/qme-skills" target="_blank" rel="noopener">View on GitHub</a>
+    </div>
+
+    <div class="install" id="install">
+      <div class="tabs" role="tablist" aria-label="Install method">
+        <button class="tab active" role="tab" aria-selected="true" aria-controls="tab-claude" id="tab-btn-claude">Claude (no terminal)</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="tab-cli" id="tab-btn-cli">Claude Code / Codex</button>
+      </div>
+
+      <div class="tab-panel" id="tab-claude" role="tabpanel" aria-labelledby="tab-btn-claude">
+        <ol class="steps">
+          <li><a href="qme-env-audit.zip" download>Download the skill</a> <span class="mono muted">(qme-env-audit.zip)</span></li>
+          <li>In Claude, open <span class="mono">Settings → Capabilities → Skills</span> and upload the zip.</li>
+          <li>Start a new chat and type <span class="mono">/qme-env-audit</span>.</li>
+        </ol>
+        <div class="note">Needs a Claude Pro, Max, Team, or Enterprise plan with code execution enabled. Run the audit before you put any real case data into that account — the audit itself will tell you whether the account is fit for it.</div>
+      </div>
+
+      <div class="tab-panel" id="tab-cli" role="tabpanel" aria-labelledby="tab-btn-cli" hidden>
+        <div class="terminal">
+          <div class="terminal-cmd"><span class="prompt">$</span> npx skills@latest add jkgoldst/qme-skills</div>
+          <button class="btn-terminal" id="copy-install" data-cmd="npx skills@latest add jkgoldst/qme-skills">Copy</button>
+        </div>
+        <div class="note">Works with compatible skill-aware agents such as Claude Code and Codex. Then run <span class="mono">/qme-env-audit</span>, or <span class="mono">/qme-env-audit --technical</span> for a codebase- or infrastructure-backed review.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT GOOD LOOKS LIKE -->
+  <section class="band">
+    <div class="band-inner">
+      <h2>What good looks like</h2>
+
+      <div class="schematic" aria-label="Six control areas">
+        <span class="node">Identity</span><span class="arrow" aria-hidden="true"></span>
+        <span class="node">Storage</span><span class="arrow" aria-hidden="true"></span>
+        <span class="node">Model</span><span class="arrow" aria-hidden="true"></span>
+        <span class="node">Output</span><span class="arrow" aria-hidden="true"></span>
+        <span class="node">Retention</span><span class="arrow" aria-hidden="true"></span>
+        <span class="node">Recovery</span>
+      </div>
+
+      <ol class="controls">
+        <li><span class="idx">01</span><span>Each person has an individual identity — no shared logins.</span></li>
+        <li><span class="idx">02</span><span>Case data stays inside a known, bounded environment.</span></li>
+        <li><span class="idx">03</span><span>Model and vendor access is explicit, not assumed.</span></li>
+        <li><span class="idx">04</span><span>PHI does not leak through convenience tools like email or chat.</span></li>
+        <li><span class="idx">05</span><span>Retention and deletion are intentional, not accidental.</span></li>
+        <li><span class="idx">06</span><span>Backups and recovery are understood before they are needed.</span></li>
+      </ol>
+      <div class="foot-note">Full methodology in <a href="https://github.com/jkgoldst/qme-skills/tree/main/skills/qme-env-audit" target="_blank" rel="noopener">GitHub / docs</a>.</div>
+    </div>
+  </section>
+
+  <!-- HOW THE SKILL WORKS -->
+  <section class="how">
+    <h2>How the skill works</h2>
+    <p class="lede-sm">It asks one question at a time, and keeps a hard line between what's verified, what's reported, and what's still unknown — an assumption is never quietly converted into a pass.</p>
+
+    <ol class="workflow">
+      <li><div class="w-title">Know the boundary</div><div class="w-desc">Map where case data enters, moves, and lives.</div></li>
+      <li class="w-arrow" aria-hidden="true"></li>
+      <li><div class="w-title">Verify</div><div class="w-desc">Separate what’s proven from what’s merely stated.</div></li>
+      <li class="w-arrow" aria-hidden="true"></li>
+      <li><div class="w-title">Fix</div><div class="w-desc">Address the highest-priority gaps first.</div></li>
+      <li class="w-arrow" aria-hidden="true"></li>
+      <li><div class="w-title">Re-check</div><div class="w-desc">Confirm the fix actually closed the gap.</div></li>
+    </ol>
+  </section>
+
+  <!-- SAMPLE FINDING -->
+  <section class="sample">
+    <div class="finding">
+      <div class="finding-head">
+        <span class="finding-label">AUDIT OUTPUT · /qme-env-audit</span>
+        <span class="pill-danger">P0</span>
+      </div>
+      <div class="finding-body">
+        <div class="finding-title">HIGH — PHI may be exposed through external email</div>
+        <div class="finding-status"><span class="muted">Status:</span> <span class="verified"><span class="dot"></span>VERIFIED</span></div>
+        <dl class="finding-fields">
+          <dt>EVIDENCE</dt><dd>Completion messages include patient identifiers in external email bodies.</dd>
+          <dt>WHY IT MATTERS</dt><dd>This creates an unnecessary PHI egress path outside any controlled boundary.</dd>
+          <dt>RECOMMENDED ACTION</dt><dd>Remove patient identifiers from email and require authenticated access for case materials.</dd>
+        </dl>
+        <div class="finding-foot">Priority: <span class="danger">P0</span> · Contain → Consolidate → Harden → Verify → Scale</div>
+      </div>
+    </div>
+    <div class="foot-note">One finding among many the skill produces from a single environment scan. Example output.</div>
+  </section>
+
+  <!-- OPERATING MODEL -->
+  <section class="band">
+    <div class="band-inner wide">
+      <h2>Choose your operating model</h2>
+      <p class="lede-sm">Both paths meet the same operational standard. The only question is who carries the operational responsibility.</p>
+
+      <div class="cards">
+        <div class="card">
+          <div class="eyebrow">SELF-OPERATED</div>
+          <h3>Run it in your environment</h3>
+          <div class="card-lines">
+            <div>You own the infrastructure and controls.</div>
+            <div>You manage storage, access, and retention.</div>
+            <div>You wire up integrations yourself.</div>
+            <div>The open skill remains fully usable.</div>
+          </div>
+        </div>
+        <div class="card card-accent">
+          <div class="eyebrow accent">MANAGED <span class="tag">TRESA</span></div>
+          <h3>Managed by Tresa</h3>
+          <div class="card-lines">
+            <div>Same operational standard as above.</div>
+            <div>Infrastructure and controls operated for you.</div>
+            <div>Storage, access, retention handled continuously.</div>
+            <div>You still see what's verified and what isn't.</div>
+          </div>
+          <a class="link-accent" href="https://app.tresagroup.com/signup">See the managed implementation →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEXT STAGE -->
+  <section class="next">
+    <div class="next-title">Next → Master the Record <span class="soon">coming</span></div>
+    <p class="lede-sm">Turn a packet of records into a reliable understanding of the case.</p>
+    <div class="epigraph">AI can organize and challenge the evidence. The physician owns the medicine.</div>
+  </section>
+
+</main>
+
+<script src="site.js"></script>
+</body>
+</html>

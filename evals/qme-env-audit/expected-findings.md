@@ -5,8 +5,8 @@ A good `/qme-env-audit` run should identify at least the following.
 ## P0 / highest severity
 
 - Production PHI is deliberately used in local development/evaluation.
-- A production service credential is stored in local `.env.local`.
-- Production and beta are not meaningfully isolated because they share core PHI stores.
+- A production service credential is stored in a local config file on a developer machine.
+- Production and the test copy of the app are not meaningfully isolated because they share core PHI stores.
 - Managed Postgres PHI storage lacks confirmed contractual/HIPAA coverage.
 - Customer-facing subprocessor documentation is materially incomplete relative to actual data flows.
 - Email/analytics paths receive identifying data unnecessarily.
@@ -18,8 +18,8 @@ A good `/qme-env-audit` run should identify at least the following.
 - No verified recovery path exists for the active object store/database.
 - No incident-response runbook exists.
 - No formal model allowlist/review gate exists.
-- Grounding verification is inconsistent: some paths are deterministic, headline hallucination review is LLM-as-judge.
-- Direct bearer report links should be weighed against auth-gated export; the current one-hour expiry is a mitigating control.
+- Grounding verification is inconsistent: a few check types deterministically confirm quotes against the source, but the headline hallucination review is an LLM-as-judge pass.
+- Direct bearer report links should be weighed against auth-gated export; the short expiry is a mitigating control.
 
 ## Strong controls worth preserving
 
