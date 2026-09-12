@@ -44,6 +44,7 @@ Set aside, not read: [file, one-line reason] or `none`.
 ## 8. What the records say that the worker should confirm or dispute
 
 - Dr. X's note of DATE records "[verbatim, at most 25 words]" [Doc, p. N]. Is that accurate? What do you recall?
+- The referral gives DATE as [fact]; Dr. X's note of DATE records "[verbatim]". Which matches what you recall? [Referral letter, p. N; Doc, entry DATE]
 
 ## Questions the referral asks the physician
 
