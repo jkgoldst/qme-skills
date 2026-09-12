@@ -42,6 +42,12 @@ Use **[`/qme-env-audit`](./skills/qme-env-audit/SKILL.md)**.
 
 It walks through the actual environment, follows PHI through the system, distinguishes verified facts from reported assumptions, and produces a prioritized remediation plan.
 
+### "I am about to sign. Do the dates add up?"
+
+Use **[`/qme-date-check`](./skills/qme-date-check/SKILL.md)**.
+
+Ten deterministic checks over the draft's own dates, each finding quoting the two sentences that disagree. The draft against itself; no transcript or records needed.
+
 ### "I need to understand a massive case quickly."
 
 **`/orient-case`** is planned to turn a packet and cover letters into a compact case map: dates of injury, body parts, parties, allegations, prior opinions, and questions the QME must answer.
@@ -81,6 +87,7 @@ The collection is organized into five **Stages** — the order a physician meets
 
 ### 05 · Defend the Report
 
+- **[`/qme-date-check`](./skills/qme-date-check/SKILL.md)** — Run the date arithmetic checks on a draft before signing: colliding years, ages against the date of birth, a date of injury or last day worked stated two ways, disability before the last day worked, dates in the future. Deterministic; every finding quotes the two places that disagree. **Available**
 - **`/completeness-review`** — Check whether required questions and report elements are addressed. *Planned*
 - **`/substantial-evidence-review`** — Challenge whether opinions are adequately supported by the record and reasoning. *Planned*
 - **`/contradiction-review`** — Check for unresolved contradictions within the report or between report and record. *Planned*
@@ -158,9 +165,13 @@ Current eval structure:
 
 ```text
 evals/
-└── qme-env-audit/
+├── qme-env-audit/
+│   ├── README.md
+│   ├── unsafe-solo-practice.md
+│   └── expected-findings.md
+└── qme-date-check/
     ├── README.md
-    ├── unsafe-solo-practice.md
+    ├── seeded-draft.txt
     └── expected-findings.md
 ```
 
@@ -179,23 +190,26 @@ qme-skills/
 ├── README.md
 ├── docs/                      # the site (GitHub Pages) + downloadable skill zips
 │   ├── index.html
-│   └── qme-env-audit.zip      # built by scripts/build-skill-zip.sh
+│   ├── qme-env-audit.zip      # built by scripts/build-skill-zip.sh
+│   └── qme-date-check.zip
 ├── scripts/
 │   └── build-skill-zip.sh
 ├── skills/
-│   └── qme-env-audit/
+│   ├── qme-env-audit/
+│   │   ├── SKILL.md
+│   │   ├── references/
+│   │   └── templates/
+│   └── qme-date-check/
 │       ├── SKILL.md
+│       ├── scripts/
+│       │   └── date_check.py
 │       ├── references/
-│       │   ├── evidence-levels.md
-│       │   └── qme-review-domains.md
+│       │   └── checks.md
 │       └── templates/
-│           ├── data-flow.md
-│           └── findings-report.md
+│           └── findings-table.md
 └── evals/
-    └── qme-env-audit/
-        ├── README.md
-        ├── unsafe-solo-practice.md
-        └── expected-findings.md
+    ├── qme-env-audit/
+    └── qme-date-check/
 ```
 
 ## Contributing
