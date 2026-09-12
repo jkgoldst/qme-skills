@@ -42,6 +42,12 @@ Use **[`/qme-env-audit`](./skills/qme-env-audit/SKILL.md)**.
 
 It walks through the actual environment, follows PHI through the system, distinguishes verified facts from reported assumptions, and produces a prioritized remediation plan.
 
+### "I have the referral and the records. What do I ask at the exam?"
+
+Use **[`/qme-interview-prep`](./skills/qme-interview-prep/SKILL.md)**.
+
+It reads what you have before the exam and produces the questions to ask the injured worker, each tied to a document and page or labeled as a standard question. It never summarizes the record.
+
 ### "I need to understand a massive case quickly."
 
 **`/orient-case`** is planned to turn a packet and cover letters into a compact case map: dates of injury, body parts, parties, allegations, prior opinions, and questions the QME must answer.
@@ -76,7 +82,7 @@ The collection is organized into five **Stages** — the order a physician meets
 
 ### 04 · Prepare the Physician
 
-- **`/prep-evaluation`** — Identify patient-specific issues and questions to clarify during the evaluation. *Planned*
+- **[`/qme-interview-prep`](./skills/qme-interview-prep/SKILL.md)** — Turn the referral letter, records, prior reports, and depositions into the questions to ask at the exam, each cited to a document and page or labeled a standard question. Questions only, never a record summary; runs with zero documents. **Available**
 - **`/draft-from-findings`** — Turn physician-approved findings into source-linked prose. *Planned*
 
 ### 05 · Defend the Report
@@ -158,10 +164,15 @@ Current eval structure:
 
 ```text
 evals/
-└── qme-env-audit/
+├── qme-env-audit/
+│   ├── README.md
+│   ├── unsafe-solo-practice.md
+│   └── expected-findings.md
+└── qme-interview-prep/
     ├── README.md
-    ├── unsafe-solo-practice.md
-    └── expected-findings.md
+    ├── referral-letter.md
+    ├── treating-records.md
+    └── expected-output.md
 ```
 
 The goal is to catch regressions such as:
@@ -179,23 +190,25 @@ qme-skills/
 ├── README.md
 ├── docs/                      # the site (GitHub Pages) + downloadable skill zips
 │   ├── index.html
-│   └── qme-env-audit.zip      # built by scripts/build-skill-zip.sh
+│   ├── qme-env-audit.zip      # built by scripts/build-skill-zip.sh
+│   └── qme-interview-prep.zip
 ├── scripts/
 │   └── build-skill-zip.sh
 ├── skills/
-│   └── qme-env-audit/
+│   ├── qme-env-audit/
+│   │   ├── SKILL.md
+│   │   ├── references/
+│   │   └── templates/
+│   └── qme-interview-prep/
 │       ├── SKILL.md
 │       ├── references/
-│       │   ├── evidence-levels.md
-│       │   └── qme-review-domains.md
+│       │   ├── question-frame.md
+│       │   └── public-sources.md
 │       └── templates/
-│           ├── data-flow.md
-│           └── findings-report.md
+│           └── question-list.md
 └── evals/
-    └── qme-env-audit/
-        ├── README.md
-        ├── unsafe-solo-practice.md
-        └── expected-findings.md
+    ├── qme-env-audit/
+    └── qme-interview-prep/
 ```
 
 ## Contributing
