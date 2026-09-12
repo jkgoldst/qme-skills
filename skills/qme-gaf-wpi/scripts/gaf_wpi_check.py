@@ -202,7 +202,7 @@ def main(argv):
     if not unchecked:
         print("- none")
     kinds = {k: sum(1 for f in findings if f[0] == k) for k in ("MISMATCH", "BOUNDARY", "ORPHAN")}
-    print(f"\n## Count\n\n{len(findings)} findings ({kinds['MISMATCH']} mismatch, {kinds['BOUNDARY']} boundary, "
+    print(f"\n## Count\n\n{len(findings)} finding{"" if len(findings) == 1 else "s"} ({kinds['MISMATCH']} mismatch, {kinds['BOUNDARY']} boundary, "
           f"{kinds['ORPHAN']} orphan); {len(consistent)} pairs consistent; {len(unchecked)} mentions not checked.")
     return 1 if findings else 0
 
