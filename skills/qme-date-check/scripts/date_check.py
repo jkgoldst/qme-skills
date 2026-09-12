@@ -101,9 +101,22 @@ def excerpt(text: str, start: int, end: int, width: int = 70) -> str:
     return ("..." if a else "") + text[a:b].replace("\n", " ").strip() + ("..." if b < len(text) else "")
 
 
+ABBREV_RE = re.compile(r"\b(?:Mr|Ms|Mrs|Dr|Jr|Sr|St|vs|No|Inc|Ltd|[A-Z])\.$")
+
+
+def _is_abbrev_period(text: str, i: int) -> bool:
+    """True when the period at text[i] ends an honorific or initial, not a sentence."""
+    return bool(ABBREV_RE.search(text[max(0, i - 4):i + 1]))
+
+
 def sentence_around(text: str, pos: int) -> str:
-    a = max(text.rfind(".", 0, pos), text.rfind("\n", 0, pos)) + 1
+    a = text.rfind(".", 0, pos)
+    while a >= 0 and _is_abbrev_period(text, a):
+        a = text.rfind(".", 0, a)
+    a = max(a, text.rfind("\n", 0, pos)) + 1
     b = text.find(".", pos)
+    while b >= 0 and _is_abbrev_period(text, b):
+        b = text.find(".", b + 1)
     b = len(text) if b < 0 else b + 1
     return text[a:b].strip()
 

@@ -31,7 +31,7 @@ Every full date in the draft, keyed by month and day. Fires when the same month 
 ### f6_age_year_math
 Three sub-checks.
 1. Each evaluee age ("Ms. X is a 41-year-old", "41-year-old woman", the `DOB: ... (41)` parenthetical) against the date of birth as of the evaluation date. Fires when off by more than one year. Ages of other people ("one child, age 12") are not evaluee ages and are ignored.
-2. Two evaluee ages more than a year apart anywhere in the draft.
+2. The lowest and highest evaluee ages in the draft, when they are more than a year apart. One finding per draft, whatever the number of distinct ages; the physician resolves the rest from the two quoted sentences.
 3. "for N years ... since YYYY" (either order, digits or words up to twenty) against the evaluation year. Fires when off by more than one year.
 
 ### f6_anchor_year_offset
