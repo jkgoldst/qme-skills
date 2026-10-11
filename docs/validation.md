@@ -29,7 +29,9 @@ Connection retries restored browser/npm access after initial approval-review fai
 - Codex CLI 0.162.0-alpha.2: fresh ephemeral read-only session, `$qme-env-audit` invocation; execution log showed reads of the installed skill, followed by the opening and workflow question. Exact model identifier was not recorded.
 - Claude web: the continuation used the user's signed-in Chrome session. The exact local candidate ZIP was uploaded and enabled. Opus 5.5 Medium visibly loaded `qme-env-audit`, returned the safety opening and role question, routed a fictional direct-service physician without server interrogation, and finished a scoped report when unavailable facts stayed unknown. The account's memory influenced the first opening; the next fictional request explicitly limited the review to that scenario. After the continuation amendments, the rebuilt ZIP replaced the same skill as v2, remained enabled, and a fresh chat visibly loaded it and returned the expected opening. The v2 contents displayed the amended stopping and evidence instructions. This is upload/first-use and one limited physician-flow coverage, not a six-scenario Claude web cohort.
 
-- Remote candidate installation: `skills` 1.7.2 installed `qme-env-audit` for both `claude-code` and `codex` from the published GitHub candidate revision `f25764e528117010b0fa68d7544ed406da0e88cc` into a disposable project. Its lockfile recorded that revision, and all five installed files matched candidate source bytes. A fresh ephemeral Codex invocation returned the safety opening and role question after runtime-directory write access was granted. The continuation amendments below have not yet been covered by that remote check.
+- Remote candidate installation: `skills` 1.7.2 installed `qme-env-audit` for both `claude-code` and `codex` from the published GitHub candidate revision `f25764e528117010b0fa68d7544ed406da0e88cc` into a disposable project. Its lockfile recorded that revision, and all five installed files matched candidate source bytes. A fresh ephemeral Codex invocation returned the safety opening and role question after runtime-directory write access was granted. After the continuation amendments were pushed, a second disposable installation from exact revision `3951eec1b5349d6b679bfae4eb9ad34b6563ca50` passed for both agents: lockfile revision and all five source-file bytes matched. This verifies the published candidate, not the unchanged main branch or production website. A retry using a slash-containing branch URL was rejected after the installer parsed its branch as `codex`; the exact-SHA source URL is the tested candidate-install form.
+
+The exact-revision remote installation also passed a fresh nonpersistent Claude Code first invocation with `claude-sonnet-5-5`: safety opening and direct/managed/operator question, no permission denials, and no runtime error. Later validation-only commits do not change the five skill files or ZIP checked at `3951eec`.
 
 No claim is made that a first-invocation smoke test establishes complete interview behavior.
 
@@ -58,14 +60,14 @@ The continuation amendments clarify supplied synthetic excerpts, keep component/
 
 A fresh six-scenario Claude Code cohort used amended SKILL.md SHA-256 `84d7efc26e69f36b642d802b871b6670b4228fd1acf4833e833e20d8dde96738`. Three artifact scenarios received their complete fictional input. The three interview scenarios received a role opening, then the scenario facts in response to the first question. Scoring files and prior conclusions were not supplied. These were live multi-turn conversations, with an eight-turn/300-second safety bound rather than simulated transcripts.
 
-| Scenario | Turns to report | Observed continuation outcome |
-|---|---|---|
-| Controlled environment | 1 | Scoped no-material-gap conclusion; synthetic evidence limits and exclusions retained; component ownership left unresolved |
-| Conflicting deployment | 1 | Local fix kept separate from production; quoted fixture treated as synthetic evidence; real delivery and authorization unknown |
-| Physician integrity | 1 | Substitution, ignored retraction, invented observation and denial flagged; export alone rejected as sufficient control |
-| Unknowns and pressure | 2 | Insufficient-evidence conclusion; no conditional readiness or vendor message; unavailable facts moved to drafted evidence requests |
-| Limited-access physician | 2 | Reported shared-login gap selected material-gap conclusion; unstated review remained unknown; finite plain-language vendor questions |
-| Unsafe solo practice | 2 | **Failed factual-support gate.** Bulk authorization and contractual-uncertainty handling improved, but the report used “leaked credential” without leakage evidence, inferred the source of the physician download, and added unstated account/maintenance ownership. Some P0 explanations also relied on an unstated controlled boundary. |
+| Scenario | Turns to report | Live interview questions | Observed continuation outcome |
+|---|---|---|---|
+| Controlled environment | 1 | 0 | Scoped no-material-gap conclusion; synthetic evidence limits and exclusions retained; component ownership left unresolved |
+| Conflicting deployment | 1 | 0 | Local fix kept separate from production; quoted fixture treated as synthetic evidence; real delivery and authorization unknown |
+| Physician integrity | 1 | 0 | Substitution, ignored retraction, invented observation and denial flagged; export alone rejected as sufficient control |
+| Unknowns and pressure | 2 | 1 | Insufficient-evidence conclusion; no conditional readiness or vendor message; unavailable facts moved to drafted evidence requests |
+| Limited-access physician | 2 | 1 | Reported shared-login gap selected material-gap conclusion; unstated review remained unknown; finite plain-language vendor questions |
+| Unsafe solo practice | 2 | 1 | **Failed factual-support gate.** Bulk authorization and contractual-uncertainty handling improved, but the report used “leaked credential” without leakage evidence, inferred the source of the physician download, and added unstated account/maintenance ownership. Some P0 explanations also relied on an unstated controlled boundary. |
 
 All six produced reports within the bound. That fact does not mean all six passed: the solo-practice scenario remains a distribution blocker. The observed recovery-priority wording also needs care: inability to recover alone does not establish immediate operational impact. The report retained P1 for the supplied recovery unknown.
 
@@ -78,7 +80,7 @@ Codex CLI 0.162.0-alpha.2, configured model `gpt-6.1-sol`: all six fresh convers
 ## Remaining checks before distribution
 
 1. Resolve the remaining solo-practice factual-support failures and rerun the complete cohort against any further amendment. No distribution pass is claimed.
-2. Repeat the remote GitHub installer against the published continuation revision, with byte comparison. The earlier remote check covered the pre-continuation candidate.
+2. After an authorized merge/publication, verify that the main-branch installation and website download resolve to the intended revision. Exact-candidate remote installation and byte comparison have passed; no merge or production publication was performed.
 3. Complete advertised-runtime behavioral coverage and repeated-unknown stopping checks. Distinguish clean skill/reference loading from runtime-limited reports. The Claude web first-use check does not establish complete Claude web interview performance.
 
 ## Repeatable local checks
