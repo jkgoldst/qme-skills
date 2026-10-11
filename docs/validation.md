@@ -166,6 +166,14 @@ Two fresh runs of the corrected full conflicting-deployment scenario retained C2
 
 Reproduce scorer calibration with `python3 scripts/test-evidence-provenance.py`. Historical reports are retained; the local diagnosis archive contains the minimized inputs, changed-variable probes, full outputs, timings, and unchanged-source proof.
 
+## Focused recovery-scope diagnosis, 2026-10-11
+
+Fresh full-report baselines on snapshots 5, 6, and 7 did not reproduce the literal “no recovery runbook” claim. A reduced one-sentence request on the current snapshot reproduced the broader defect: recovery and incident response were jointly called undocumented, although only the incident-response runbook absence was supplied. Splitting the source absences into separate sentences did not prevent that shared-modifier expansion. Missing reported evidence is kept distinct from an asserted missing control.
+
+Three separate-control-row probes preserved recovery-documentation scope, but one still overstated incident documentation within its row. These small stochastic samples support summary compression as a contributing behavior, not a proven complete cause or fix. Further minimization is not established. The source remained frozen; no skill amendment or distribution pass is claimed.
+
+Seven captured/calibration cases pass `python3 scripts/test-recovery-scope.py` in about 0.2 seconds. The replay detector checks known narrow symptoms, not arbitrary prose truth. Phase 5 found no controlled generation boundary in this Markdown-only implementation where a reliable behavior regression could be enforced. The next design should test exact-source evidence records and per-control rendering, keeping interpretations separate and accounting for both web and CLI portability. A general-purpose claim validator is not assumed to solve this.
+
 ## Remaining checks before distribution
 
 1. Resolve the final Claude factual-support failures, then rerun the complete cohort against any further amendment. Repeat the scoped Codex checks if its source files change. No distribution pass is claimed.
