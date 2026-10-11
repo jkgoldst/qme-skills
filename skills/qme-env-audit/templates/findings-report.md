@@ -1,6 +1,6 @@
 # QME AI Setup Review
 
-Keep the report proportionate to the scope. Write the evidence register before synthesizing the summary, and state each fact there once. Elsewhere, refer to its ID rather than retelling the workflow. Use the same evidence-backed claims in the register and every other section, including the opening. Before finishing, check relationship comparisons, completed actions, and ownership against their cited evidence; narrow any paraphrase that adds a fact. An evidence label applies to the supported claim only: attribution as REPORTED still requires a supplied statement. For example, an operator requesting the review establishes their role, while ownership of a renderer or account stays UNKNOWN without an ownership statement. The scope names the reviewed controls and intended activity; distinguish reported completed actions from requirements such as an export gate. It does not complete an assumed sequence or recipient. Finalize the scoped statement after the matrix, using SKILL.md; check that it agrees with every gap/unknown status and priority rationale.
+Assemble a concise report around a single evidence register. Extract the supplied factual clauses there, retaining their conditions, control scope, and evidence level. Use the register's IDs elsewhere instead of creating fresh factual paraphrases; when repeating a factual clause is necessary, copy that clause with its condition and level intact. Scope lists the reviewed domains and intended activity, not a reconstructed end-to-end sequence. Matrix facts are evidence IDs; write the risk interpretation and recommended action separately. Strong controls reference the same IDs and explain their value and limits. Draft requests retain placeholders for unresolved account, purpose, and ownership. Finalize the scoped statement after the matrix using SKILL.md, and check it against every gap, unknown, and priority rationale.
 
 ## Scope and assessment
 
@@ -15,7 +15,7 @@ Use the scoped statement defined in SKILL.md. Explain established gaps and mater
 
 ## Executive findings
 
-State the most urgent action and its basis. Separate observed facts, risk interpretations, and unresolved assumptions.
+State the most urgent action and cite its evidence IDs. Summarize the established gaps and material unknowns by their finding IDs. Keep factual wording in the register; state risk interpretations conditionally where they depend on unknowns.
 
 ## Current-state data flow and trust boundaries
 
@@ -28,12 +28,12 @@ Use data-flow.md. Only include actual or reported paths, labeled accordingly.
 
 ## Control/findings matrix
 
-| ID / domain | Observed fact and evidence IDs | Risk interpretation | Control status: gap / unknown / no gap identified | Priority and reason | Owner / next action | Evidence needed to close |
+| ID / domain | Evidence IDs for the factual basis | Risk interpretation | Control status: gap / unknown / no gap identified | Priority and reason | Owner / next action | Evidence needed to close |
 |---|---|---|---|---|---|---|
 
 ## Strong controls worth preserving
 
-Include evidence IDs and limits. A reported control remains REPORTED.
+Reference evidence IDs, then describe each control's value and limits. Carry the register's evidence level into this section; a reported agreement remains REPORTED, with terms and coverage uninspected.
 
 ## Subprocessors
 
@@ -52,7 +52,7 @@ List material blockers and who can supply evidence. Describe what additional rev
 
 ## Vendor evidence request
 
-For managed services or inaccessible controls, draft a short request with the exact scoped artifacts needed. Never send it automatically.
+For managed services or inaccessible controls, draft a short request with the exact scoped artifacts needed. Describe established current use using its evidence ID. Where the data purpose or intended use is unstated, frame the request as an evaluation for possible use and ask the owner to supply the missing scope; retain placeholders for unknown product, account, and purpose. Never send it automatically.
 
 ## Questions for counsel
 

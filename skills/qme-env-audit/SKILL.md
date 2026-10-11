@@ -65,7 +65,7 @@ No verified recovery path usually means a P1 evidence/recovery task. A confirmed
 
 ## Finish the review
 
-Track coverage silently. Treat an answered unknown as a recorded evidence task, not another interview question. End the interview once the applicable data paths and responsible parties are mapped, material gaps/unknowns have actions, and remaining questions would require unavailable evidence. Finish with the report and evidence requests for its owners; resume questions only when the user supplies new evidence or expands scope. If the user requests an early stop, produce a partial report with explicit unreviewed areas.
+Track coverage silently. Treat an answered unknown as a recorded evidence task, not another interview question. End the interview once the applicable data paths and responsible parties are mapped, material gaps/unknowns have actions, and remaining questions would require unavailable evidence. Once the user says further facts are unavailable, close with the report and owner-assigned evidence tasks. The final report may invite reassessment when new evidence arrives; leave unavailable questions in that task list rather than ending with an unanswered interview question. Finish with the report and evidence requests for its owners; resume questions only when the user supplies new evidence or expands scope. If the user requests an early stop, produce a partial report with explicit unreviewed areas.
 
 Read and use [findings report](templates/findings-report.md) and [data-flow guidance](templates/data-flow.md). Include the reviewed scope, evidence register, data flow/trust boundaries, subprocessors, control matrix, strong controls, priorities/owners, unknowns, and counsel/vendor questions as applicable.
 
