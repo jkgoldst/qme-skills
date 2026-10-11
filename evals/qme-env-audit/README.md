@@ -8,7 +8,8 @@ These fictional scenarios test meaningful decisions rather than preferred wordin
 2. For interview scenarios, answer from the scenario. Use “I don't know” when information is missing. Stop when the agent produces its report or repeats an unavailable evidence request. For artifact scenarios, give the provided fictional artifacts and request the scoped report.
 3. Save the transcript and output outside tracked files. Record runtime/version, model, skill commit, date, scenario, question count, and whether invocation actually loaded the skill.
 4. Compare unsafe-solo-practice with expected-findings.md; compare the other cases with behavior-expectations.md. Score factual support, certainty, routing, coverage, priority/action, physician boundaries, and completion separately.
-5. Record failures and rerun changed behavior against all scenarios. A structural/package check does not establish behavioral success.
+5. Record input provenance before scoring evidence levels. Distinguish operator descriptions from inspectable supplied excerpts. If wording is ambiguous, mark that evidence-level dimension unscored and clarify the fixture; do not count either interpretation as a failure. The C2-only replay checker is a narrow calibration tool, not a general factual-support judge: `python3 scripts/test-evidence-provenance.py`.
+6. Record failures and rerun changed behavior against all scenarios. A structural/package check does not establish behavioral success.
 
 ## Scoring gates
 

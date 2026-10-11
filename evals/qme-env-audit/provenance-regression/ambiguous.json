@@ -1,0 +1,6 @@
+{
+  "provenance": "ambiguous",
+  "report": "| E2 | The supplied redacted production manifest states production runs old-8. | VERIFIED (what the excerpt states) | Redacted production deployment manifest, supplied; no line locator | Production, old-8 | 2026-10-10 | Manifest is not a runtime observation. Its generation date is UNKNOWN, as are other environments and any rollout in progress. |\n| F2 Fix verification / \"clean\" status | E1, E2, R1 | The fix is source-level only. A \"clean\" label would rest on REPORTED statements and a revision that is not deployed. | Gap (verification) | P1: resolve before relying on the label | Recommended: operator release owner. Withhold the clean label. | Updated manifest or deployment record showing new-9 (or later) in production, plus post-deploy rendered output. |\n",
+  "expected_exit": 2,
+  "source": "Selected manifest evidence-register row from fictional live diagnosis output; supplied-excerpt varies provenance to test scorer calibration, not a new runtime result."
+}

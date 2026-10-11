@@ -154,6 +154,18 @@ The instruction-only approach has not established sufficiently consistent factua
 
 Full per-cohort completion, source hashes, installed parity, scoped-reference reads, and manual findings are retained in the local follow-up evidence bundle. Every cohort is a single sample per scenario, not a reliability estimate. The existing Claude web v2 has not been replaced, the latest candidate has not been installed from a published exact SHA, and PR #5 remains a draft with distribution and merge-readiness gates open.
 
+## Focused diagnosis: evidence-level scorer calibration
+
+A diagnosis of the conflicting-deployment evidence upgrade found ambiguous fixture provenance and an inconsistent scoring guide. The old scenario said the operator “supplies fictional artifacts,” while the guide expected a VERIFIED documentation conflict. Later manual reviews treated C2/C4 as descriptions and failed VERIFIED labels. Those historical evidence-level verdicts are inconclusive and must not be counted as demonstrated skill defects. This correction does not clear the independent factual-support failures or distribution gates.
+
+The symptom was reproduced and reduced to one manifest claim. A single-sentence output still produced VERIFIED, while three focused runs explicitly stating that no manifest or excerpt was supplied produced REPORTED. The frozen skill and installed five-file source hashes remained unchanged. These observations support ambiguity in how supplied evidence was presented; they do not establish that evidence-level errors can never occur.
+
+The fixture and guide now agree: C1/C2/C4 are operator descriptions; only C3 quoted text is inspectable, and its renderer attribution remains REPORTED. The narrow replay scorer requires explicit provenance and returns UNSCORED for ambiguous inputs. Its regression test failed on ambiguous and inspectable-excerpt cases before the fix, then passed all four calibration cases in about 0.2 seconds. It is not a general prose truth checker or a runtime claim validator.
+
+Two fresh runs of the corrected full conflicting-deployment scenario retained C2/C4 as REPORTED and verified only displayed C3 text. These are targeted evidence-attribution passes, not full distribution passes or a reliability estimate. No additional skill instruction or ZIP change was needed. Remaining recovery, ownership, and physician-review failures require their own focused diagnosis before another broad cohort.
+
+Reproduce scorer calibration with `python3 scripts/test-evidence-provenance.py`. Historical reports are retained; the local diagnosis archive contains the minimized inputs, changed-variable probes, full outputs, timings, and unchanged-source proof.
+
 ## Remaining checks before distribution
 
 1. Resolve the final Claude factual-support failures, then rerun the complete cohort against any further amendment. Repeat the scoped Codex checks if its source files change. No distribution pass is claimed.
