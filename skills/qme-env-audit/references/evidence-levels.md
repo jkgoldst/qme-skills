@@ -23,7 +23,7 @@ Examples:
 - A directly observed account setting disables training. It does not prove all connected tools share that policy.
 - An inspected notification fixture contains patient-identifying fields. It does not prove real notifications were sent or that recipients were unauthorized.
 
-For a synthetic evaluation, label supplied inspectable artifacts as synthetic evidence; never imply live access. A narrative scenario is REPORTED unless it explicitly provides an artifact to inspect.
+For a synthetic evaluation, inspect supplied artifact excerpts as synthetic evidence. A quoted fixture can verify its displayed text, and an explicitly supplied manifest or test-result excerpt can verify what that excerpt states, with the supplied locator, scope, date, and limits. File access is not required to inspect an excerpt. A description that merely says an artifact exists remains REPORTED. Neither form establishes live access or real-world behavior beyond its contents.
 
 ## REPORTED
 

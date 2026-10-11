@@ -47,7 +47,7 @@ For data-flow maps, include only paths and actions supplied or directly evidence
 
 Separate observed fact, risk interpretation, and action. Never infer a pass from silence, a missing search result, or marketing language. Preserve conflicting evidence instead of averaging it into confidence. Unknown is not a failed control or a pass.
 
-Distinguish legal/contract status, technical control, and operational practice. Record legal-role and contractual-interpretation questions for counsel. A BAA is not proof of technical security, and encryption is not proof of legal compliance. An LLM self-check remains probabilistic.
+Distinguish legal/contract status, technical control, and operational practice. Record legal-role and contractual-interpretation questions for counsel. A signed BAA for one provider does not establish that an agreement is legally required for another provider; applicability remains a counsel question until established. A BAA is not proof of technical security, and encryption is not proof of legal compliance. An LLM self-check remains probabilistic.
 
 ## QME integrity boundary
 
@@ -61,11 +61,11 @@ Priority describes urgency of an action. Evidence level describes what is known.
 - **P1, resolve before the affected use expands:** material unknowns about processing terms, authorization, recovery, retention, or physician safeguards; control gaps without demonstrated immediate exposure; materially inaccurate customer claims. Assign an owner and the evidence or change needed.
 - **P2, harden:** lower-impact improvements once material gaps and unknowns are addressed.
 
-No verified recovery path usually means a P1 evidence/recovery task. A confirmed inability to recover critical data with immediate operational impact may warrant P0. Patient-derived identifiers or production credentials require assessment of access, scope, purpose, propagation, and controls, not automatic claims of disclosure. Authorized physician review on a controlled device is not development/testing.
+No verified recovery path usually means a P1 evidence/recovery task. A confirmed inability to recover critical data with immediate operational impact may warrant P0. Patient-derived identifiers or production credentials require assessment of access, scope, purpose, propagation, and controls, not automatic claims of disclosure. A local config file alone does not establish credential lifetime, plaintext storage, device protection, or what data the credential can reach. For physician downloads, record the stated clinical-review purpose separately from authorization, retention, and sharing; keep those UNKNOWN when unstated, and reserve development/testing findings for evidenced development use.
 
 ## Finish the review
 
-Track coverage silently. End the interview once the applicable data paths and responsible parties are mapped, material gaps/unknowns have actions, and remaining questions would require unavailable evidence. Do not keep asking infrastructure questions the user cannot answer. If the user requests an early stop, produce a partial report with explicit unreviewed areas.
+Track coverage silently. Treat an answered unknown as a recorded evidence task, not another interview question. End the interview once the applicable data paths and responsible parties are mapped, material gaps/unknowns have actions, and remaining questions would require unavailable evidence. Finish with the report and evidence requests for its owners; resume questions only when the user supplies new evidence or expands scope. If the user requests an early stop, produce a partial report with explicit unreviewed areas.
 
 Read and use [findings report](templates/findings-report.md) and [data-flow guidance](templates/data-flow.md). Include the reviewed scope, evidence register, data flow/trust boundaries, subprocessors, control matrix, strong controls, priorities/owners, unknowns, and counsel/vendor questions as applicable.
 
@@ -75,4 +75,4 @@ Choose a scoped statement:
 - **INSUFFICIENT EVIDENCE TO ASSESS:** use when material facts remain unknown and no established gap resolves the overall assessment. Name blockers, owners, and required evidence.
 - **NO MATERIAL GAPS IDENTIFIED IN THE CONTROLS REVIEWED:** use only when applicable material controls have direct evidence and no unresolved material gaps or unknowns remain in the stated scope. List scope exclusions and evidence dates. This is not a guarantee or authorization.
 
-If gaps and unknowns coexist, report both. Never use an unqualified “ready,” “secure,” “HIPAA compliant,” or “QME compliant” verdict. Reassessment must identify new evidence and which specific findings it resolves; a claimed fix alone stays REPORTED.
+If an established material gap and unknowns coexist, use MATERIAL GAPS IDENTIFIED and report both. A credibly reported gap can establish that assessment without becoming VERIFIED. Never use an unqualified “ready,” “secure,” “HIPAA compliant,” or “QME compliant” verdict. Reassessment must identify new evidence and which specific findings it resolves; a claimed fix alone stays REPORTED.
