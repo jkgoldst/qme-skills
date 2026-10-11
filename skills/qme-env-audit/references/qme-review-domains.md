@@ -81,8 +81,8 @@ Establish:
 Establish:
 - human credential storage
 - runtime secret storage
-- local plaintext secrets
-- long-lived keys
+- credential storage format and protections, supported by evidence
+- credential lifetime and rotation, supported by evidence
 - whether production service credentials are available in dev
 
 ### 8. Retention and deletion

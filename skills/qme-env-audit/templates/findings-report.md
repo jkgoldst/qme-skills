@@ -1,5 +1,7 @@
 # QME AI Setup Review
 
+Keep the report proportionate to the scope. Write the evidence register before synthesizing the summary, and state each fact there once. Elsewhere, refer to its ID rather than retelling the workflow. The scope names the reviewed controls; it does not complete an assumed sequence or recipient. Finalize the scoped statement after the matrix, using SKILL.md; check that it agrees with every gap/unknown status and priority rationale.
+
 ## Scope and assessment
 
 - Reviewed workflow/intended activity:
@@ -35,7 +37,7 @@ Include evidence IDs and limits. A reported control remains REPORTED.
 
 ## Subprocessors
 
-| Vendor | Purpose | Data categories | PHI possible? | Contract evidence/status | Region evidence/status | Owner |
+| Vendor | Purpose | Data categories | PHI possible? | Contract evidence/status | Region evidence/status | Established account/control owner (evidence or UNKNOWN) |
 |---|---|---|---|---|---|---|
 
 ## Action plan

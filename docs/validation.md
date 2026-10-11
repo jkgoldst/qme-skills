@@ -77,11 +77,49 @@ Repeated-unknown stress check: a separate fresh Sonnet conversation received the
 
 Codex CLI 0.162.0-alpha.2, configured model `gpt-6.1-sol`: all six fresh conversations produced scoped reports (one turn for artifact cases; two turns for interview cases). The primary installed SKILL.md was supplied by explicit skill invocation. However, the configured Node MCP tool failed while reading supporting files. An evaluation-only retry with that tool disabled still reported `sandbox_apply: Operation not permitted` when trying local reads. No saved configuration was changed. These are **runtime-limited behavioral observations**, not clean full-skill passes. The solo-practice output retained authorization, credential scope, provider applicability and database recovery as unknown; it did not reproduce the Sonnet leakage claim. A clean run with all routed references available remains necessary.
 
+## Ordered follow-up, October 10, 2026
+
+The next requested sequence was to fix unsupported facts, rerun all six scenarios, evaluate Codex with full reference access, and then review merge readiness and published installation. Work stopped at a complete evaluation boundary when the user requested a handoff. No merge or production deployment occurred.
+
+The amendments extend evidence support to every report section, separate established owners from recommended action owners, remove the sample architecture diagram, require complete evidence-backed path rows, preserve shared-login assessment consistency, distinguish broken test/production isolation from unknown credential controls, and make unknown-dependent risk explanations conditional. The technical checklist now requests credential storage and lifetime evidence rather than priming particular credential attributes. No additional skill was created.
+
+Several complete intermediate Claude cohorts and two API/DNS-error retries informed these changes. Their reports are retained in the follow-up transcript archive. A completed report is not a passed evaluation. The final unchanged source set used SKILL.md SHA-256 `a13126d0292a9bdad8af8161c93298fd0c021fc7d8c242d1c7a712bc8bfe1d8c`; all five source-file hashes are in the follow-up results JSON.
+
+Final Claude Code 2.1.296 cohort, Sonnet resolving to `claude-sonnet-5-5`: artifact inputs produced reports in one turn with no live questions; role-first interview inputs produced reports in two turns with one live question. Scoring expectations and prior conclusions were withheld.
+
+| Scenario | Final Claude observation |
+|---|---|
+| Controlled environment | Scoped positive assessment with evidence limits and exclusions retained |
+| Conflicting deployment | Source fix kept separate from deployed evidence; real delivery and unauthorized disclosure unknown |
+| Physician integrity | Required failures identified, but the opening assumes the export gate would carry flawed content through unchanged; that downstream behavior is unstated |
+| Unknowns and pressure | No readiness verdict or sent request; current ownership assertions nevertheless conflict with its UNKNOWN ownership statement |
+| Limited-access physician | Shared-login gap and overall assessment agree; unstated physician review and purpose remain unknown; no infrastructure interrogation |
+| Unsafe solo practice | Original leakage, credential-lifetime, download-source, and account-ownership errors did not recur. **Factual-support gate still failed:** it asserts three distinct vendor relationships and actual read/write behavior beyond the supplied facts |
+
+These residual factual-support issues prevent a distribution pass. Narrow corrections improved behavior but did not demonstrate reliable factual restraint across all scenarios. The final reports and their failure locations should guide the next amendment; do not select an earlier successful sample as proof that the final candidate passes.
+
+Codex CLI 0.162.0-alpha.2, configured `gpt-6.1-sol` with low reasoning: six fresh sessions produced scoped reports. The previous local-read sandbox failure was avoided through an evaluation-only stdio MCP tool restricted to existing files within each disposable installed skill. Its read logs and byte comparisons confirm the same five-file source set. The helper rejects paths outside the skill and exposes no mutation operation. This was a reference-access mechanism for evaluations, not a shipped tool or a change to saved Codex configuration.
+
+The initial attempt could not initialize Codex state databases until filesystem access to its runtime directory was granted. In the next cohort, five cases read all applicable references; the solo case's resumed command did not expose its technical reference tool. A fresh solo retry passed the tool overrides directly at the resume subcommand, read all five files, and produced a report after two questions and a final unknown answer. The earlier limited run is retained, not treated as clean coverage.
+
+| Scenario | Codex turns to report | Live questions | Applicable files read | Manual scoped result |
+|---|---|---|---|---|
+| Controlled environment | 1 | 0 | 5 | Passed scoped criteria |
+| Conflicting deployment | 1 | 0 | 5 | Passed scoped criteria |
+| Physician integrity | 1 | 0 | 5 | Passed scoped criteria |
+| Unknowns and pressure | 2 | 1 | 4 | Passed scoped criteria |
+| Limited-access physician | 2 | 1 | 4 | Passed scoped criteria |
+| Unsafe solo practice, fresh retry | 3 | 2 | 5 | Passed scoped criteria |
+
+No material factual-support or readiness error was found in those six Codex reports on manual review. This is one sample per scenario using scoped MCP access, not a reliability estimate or proof that the ordinary configured native file reader works. Unrelated plugin-icon warnings and a model-list refresh timeout appeared in stderr; the actual reports and required reference reads completed.
+
+The latest ZIP matches the local source and passes structural validation. The signed-in Claude web account still has the earlier v2 upload described above, not this follow-up's latest source. Final-source web replacement and exact-revision remote installation remain unperformed. Earlier exact-revision installation results apply only to the earlier source sets explicitly named above.
+
 ## Remaining checks before distribution
 
-1. Resolve the remaining solo-practice factual-support failures and rerun the complete cohort against any further amendment. No distribution pass is claimed.
-2. After an authorized merge/publication, verify that the main-branch installation and website download resolve to the intended revision. Exact-candidate remote installation and byte comparison have passed; no merge or production publication was performed.
-3. Complete advertised-runtime behavioral coverage and repeated-unknown stopping checks. Distinguish clean skill/reference loading from runtime-limited reports. The Claude web first-use check does not establish complete Claude web interview performance.
+1. Resolve the final Claude factual-support failures, then rerun the complete cohort against any further amendment. Repeat the scoped Codex checks if its source files change. No distribution pass is claimed.
+2. Replace the earlier Claude web v2 with the stable candidate, verify first use, and verify exact-revision installation from the updated published PR candidate.
+3. Review merge readiness only after validation gates clear. Merge/publication requires user direction. Then verify main-branch installation and the production website download resolve to the intended source. Nothing was merged or published during this follow-up.
 
 ## Repeatable local checks
 
