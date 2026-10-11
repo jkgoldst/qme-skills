@@ -37,7 +37,7 @@ Map practice-side uploads, access, exports, devices, and physician review. Ask f
 
 Read [technical review domains](references/qme-review-domains.md) and review the applicable architecture. Use available read-only evidence rather than asking the user to restate it. Establish the deployed revision/environment before treating repository code as runtime evidence. Do not print secrets or broad environment dumps, expand permissions, change settings, or test a production case. If access is unavailable, list the specific redacted evidence needed from the operator.
 
-Mixed workflows may need more than one path. Name the boundaries and who owns each control.
+Mixed workflows may need more than one path. Name established boundaries and evidence-backed control owners; record unresolved ownership as UNKNOWN and propose action owners separately.
 
 ## Evidence and interpretation
 
@@ -51,7 +51,7 @@ Distinguish legal/contract status, technical control, and operational practice. 
 
 ## QME integrity boundary
 
-For workflows that generate or review clinical content, establish whether the system preserves physician-stated diagnoses, scores, conclusions, and retractions; separates evidence from AI proposals and physician-approved content; and requests physician input where provenance is absent. Ask about invented observations, undocumented denials, and claims that the physician performed an action. Explicit export alone does not establish these safeguards. Assess architecture or fictional examples, not a real case's medical merits. The physician owns the final opinion.
+For workflows that generate or review clinical content, establish whether the system preserves physician-stated diagnoses, scores, conclusions, and retractions; separates evidence from AI proposals and physician-approved content; and requests physician input where provenance is absent. Ask about invented observations, undocumented denials, and claims that the physician performed an action. An explicit-export requirement establishes a gate, not what content passes it. Assess generation defects on their own evidence; whether edits, flags, or blocking checks intervene before export remains UNKNOWN unless supplied. Explicit export alone does not establish these safeguards. Assess architecture or fictional examples, not a real case's medical merits. The physician owns the final opinion.
 
 ## Prioritize actions
 

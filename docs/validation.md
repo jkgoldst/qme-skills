@@ -115,6 +115,33 @@ No material factual-support or readiness error was found in those six Codex repo
 
 The latest ZIP matches the local source and passes structural validation. The signed-in Claude web account still has the earlier v2 upload described above, not this follow-up's latest source. Final-source web replacement and exact-revision remote installation remain unperformed. Earlier exact-revision installation results apply only to the earlier source sets explicitly named above.
 
+## Resumed correction cohorts, October 10, 2026
+
+The handoff was resumed in the existing candidate worktree. Three narrow amendments addressed component/vendor comparisons, configured connections versus completed operations, export requirements versus downstream behavior, established ownership versus proposed action owners, and permission-dependent risk statements. Each amendment was followed by all six fresh Claude scenarios and scoped Codex reference coverage. No scoring files or prior outcomes were supplied to either evaluator. Fictional inputs only were used.
+
+Initial runtime attempts failed before evaluation: Claude reported not logged in and Codex could not initialize state databases. After runtime filesystem/network access was granted, fresh separate cohorts completed. Startup failures are retained as runtime errors, not behavioral scores. Claude remained authenticated according to its local auth status; saved configuration was not changed.
+
+The completed cohorts use Claude Code Sonnet (`claude-sonnet-5-5`) and Codex CLI configured `gpt-6.1-sol`. Artifact cases received their complete scenario. Interview cases received a role opening, the scenario, and unknown answers as needed. The live bounds remain eight turns/300 seconds for Claude and six turns with 180-second command limits for Codex. Installed five-file snapshots and actual scoped MCP reference reads are recorded separately for each source set.
+
+| Final Claude scenario | Manual scoped result |
+|---|---|
+| Controlled environment | Passed scoped criteria; components kept separate from unidentified vendors, narrow positive assessment and exclusions retained |
+| Conflicting deployment | Failed factual support: F2 labels the finding “Identifiers in email bodies” despite unstated notification transport. Real delivery and disclosure remain unknown |
+| Physician integrity | Passed scoped criteria; all four generation defects identified and intervening export handling remains unknown |
+| Unknowns and pressure | Failed completion/usability: report declares the interview ended but repeats unavailable workflow question 1 as unanswered rather than leaving only an evidence task |
+| Limited-access physician | Core routing/shared-login/uncertainty criteria satisfied; vendor-request wording still assumes a records-review purpose that was not established |
+| Unsafe solo practice | Failed factual support: register R15 and the strong-controls section omit the supplied without-export condition and state an absolute restriction on AI signing/submission. Permission and maintenance corrections held |
+
+The intermediate cohorts also completed all six Claude reports. Their observed residual errors informed subsequent amendments: unsupported component-to-provider mappings and renderer ownership in the first, and an unsupported full-PHI-access consequence plus contractor maintenance role in the second. These reports remain historical evidence, not selected as a passing final cohort.
+
+Final Codex coverage completed all six cases. Manual review found no material factual-support or readiness error. Artifact cases finished in one turn, limited-access and pressure cases in two turns, and the solo case in three turns after a final unknown answer. Actual read logs show five applicable files for operator/artifact cases and four for the two nontechnical cases. All six disposable installations byte-match the final frozen five-file snapshot. The two intermediate Codex cohorts also completed all six cases with applicable reads and matching snapshots. These are scoped observations through the read-only MCP helper, not proof of the ordinary native file reader or a reliability estimate.
+
+The final Claude source still fails distribution gates. Further instruction amendments produced improvement but did not establish consistent factual restraint. No web skill replacement, latest-head remote installation, merge-readiness approval, merge, main-branch installation, or production-site parity is claimed from these runs.
+
+Final source-file hashes are recorded in the results JSON; SKILL.md SHA-256 is `4686491faf06c9c94263c00a940962edb0efd0eb497909d2d6f4758924c5f073`. Reference/template hashes distinguish the three cohorts even where SKILL.md did not change. The first Codex harness computed its status digest at completion from the repository; the separately recorded installed five-file hashes and frozen-snapshot parity are the source identity authority.
+
+The evidence package is saved outside tracked source at `/Users/jkgoldst/Documents/Codex/2026-10-10/wh/outputs/qme-resume-results.json` and `qme-resume-transcripts.zip`. It includes text reports, statuses, actual reference-read logs, harnesses, fictional scenarios/expectations, and three frozen five-file snapshots. Raw runtime events, authentication files, and saved configuration files are excluded from the archive. Scope remains one sample per scenario per cohort, not a reliability estimate or native-reader verification.
+
 ## Remaining checks before distribution
 
 1. Resolve the final Claude factual-support failures, then rerun the complete cohort against any further amendment. Repeat the scoped Codex checks if its source files change. No distribution pass is claimed.

@@ -21,7 +21,7 @@ Document at least:
 
 ## Data inventory
 
-Record established account/control owners with their evidence IDs, or UNKNOWN. Put recommended action owners in the action plan instead. Components and subprocessors are different inventories. List a component as an external vendor only when evidence establishes that relationship; otherwise keep its vendor/owner UNKNOWN.
+Record established account/control owners with their evidence IDs, or UNKNOWN. Put recommended action owners in the action plan instead. Components and subprocessors are different inventories. Preserve the stated comparison when recording relationships: a separate store establishes a component boundary; vendor distinctness requires a named comparison. A configuration pointing at production establishes a connection and broken isolation, while completed reads or writes remain UNKNOWN until reported or observed. Describe possible access or alteration as risk, conditional on permissions. List a component as an external vendor only when evidence establishes that relationship; otherwise keep its vendor/owner UNKNOWN.
 
 | Component | Vendor / owner | Data handled | PHI? | Region | Contract/BAA status | Evidence level |
 |---|---|---|---|---|---|---|
