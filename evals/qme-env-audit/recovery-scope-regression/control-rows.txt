@@ -1,0 +1,18 @@
+# Executive Summary: Recovery and Incident Response (QME web app, fictional test)
+
+**Scoped statement: MATERIAL GAPS IDENTIFIED** in the controls reviewed. Material unknowns coexist with these gaps (see row 2).
+
+**Scope:** recovery and incident response only, for a QME web app the user reports operating. All facts are REPORTED by the user on 2026-10-11, with no artifacts inspected, so nothing is VERIFIED. Audit conversation and report storage is UNKNOWN. Other domains (access, retention, export, QME integrity, subprocessors, and so on) were not reviewed and are not passes.
+
+| # | Control | Supplied fact (REPORTED) | Risk interpretation (separate from fact) | Status | Priority and recommended action |
+|---|---|---|---|---|---|
+| 1 | Object versioning, active object-storage bucket | The active bucket has no object versioning. | Overwritten or deleted objects in that bucket may be unrecoverable from the bucket itself. Whether other copies, application edit history, or backups exist is UNKNOWN. The impact depends on what the bucket holds, which was not stated. | Gap | **P1.** Recommended owner: operator. Evidence to close: a redacted bucket settings view showing versioning state, or an alternative copy/retention mechanism. |
+| 2 | Database backup / PITR | Configuration is unknown. | If no backups or PITR are enabled, database loss could be unrecoverable. If they are enabled, the gap shifts to restore verification (row 3). Neither can be assumed. | Unknown | **P1.** Recommended owner: operator. Evidence to close: a redacted backup/PITR setting, retention period, and RPO/RTO targets. |
+| 3 | Restore testing | No restore test exists. | No evidence shows that any backup or copy can actually be restored. A recovery path is therefore unverified, which the review domains treat as a serious availability/integrity finding. | Gap | **P1.** Recommended owner: operator. Evidence to close: a dated restore-test record, with scope and results, run against non-production fictional data. |
+| 4 | Incident-response runbook | No incident-response runbook exists. | An incident might be handled without defined ownership, containment, evidence preservation, credential rotation, or counsel/notification evaluation. Whether informal practice or ownership exists is UNKNOWN. | Gap | **P1.** Recommended owner: operator, with counsel input. Evidence to close: a written runbook with owner and escalation path, plus a tabletop exercise record. |
+
+**Priority rationale:** No row is P0. P0 requires a confirmed inability to recover critical data together with immediate operational impact, and neither was supplied. Rows 1, 3, and 4 are reported control gaps, and row 2 is a material unknown. All four should be resolved before use of this app with real case data expands.
+
+**Open items (owner: operator):** Further facts and artifacts are unavailable per the user. The items above remain an evidence task list. Reassessment can resolve a row only on new evidence, and a claimed fix alone stays REPORTED.
+
+*This is a scoped technical and operational evidence review. It is not legal advice, a compliance certification, or permission to use patient data.*

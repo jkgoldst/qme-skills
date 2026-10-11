@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>QME AI Hero — /qme-env-audit · open skills for California QMEs</title>
+<title>QME AI Setup Review | QME AI Hero</title>
 <meta name="description" content="Audit your QME AI setup before using real case data. An open skill for California Qualified Medical Evaluators.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -53,45 +53,83 @@
   <!-- top chrome -->
   <div class="chrome">
     <a href="https://github.com/jkgoldst/qme-skills" target="_blank" rel="noopener">GitHub</a>
-    <a href="https://github.com/jkgoldst/qme-skills#readme" target="_blank" rel="noopener">About</a>
+    <a href="#about">About</a>
     <button class="btn-pill" id="theme-toggle" aria-label="Toggle dark mode">Dark</button>
   </div>
 
   <!-- HERO -->
   <section class="hero">
     <div class="eyebrow">STAGE 01 · SAFE ENVIRONMENT</div>
-    <div class="cmd">/qme-env-audit</div>
+    <div class="cmd">QME AI Setup Review</div>
     <h1>Audit your QME AI setup before using real case data.</h1>
-    <p class="lede">This skill helps you see exactly where case data goes, what can be independently verified right now, and what needs fixing before you rely on the environment for real evaluations.</p>
+    <p class="lede">Describe your tools and workflow. Get a map of where case data goes, a prioritized list of gaps, and specific questions for your vendor or technical support.</p>
 
     <div class="cta-row">
-      <a class="btn-primary" href="#install">Install /qme-env-audit</a>
-      <a class="btn-outline" href="https://github.com/jkgoldst/qme-skills" target="_blank" rel="noopener">View on GitHub</a>
+      <a class="btn-primary" href="#install">Install the review</a>
+      <a class="btn-outline" href="sample-report.html">See a complete example</a>
     </div>
 
+    <div class="intro-grid">
+      <p><strong>What is a skill?</strong> Reusable instructions you install in an AI assistant. This one guides an interview and evidence review, adapted to the controls you own.</p>
+      <p><strong>No patient files needed.</strong> Use fictional descriptions and redacted evidence. Keep passwords, API keys, and patient identifiers out of the audit.</p>
+      <p><strong>What you get.</strong> A workflow map, scoped findings, and an action plan. The review identifies gaps and unknowns; it does not certify an account for patient data or make changes.</p>
+    </div>
     <div class="install" id="install">
       <div class="tabs" role="tablist" aria-label="Install method">
-        <button class="tab active" role="tab" aria-selected="true" aria-controls="tab-claude" id="tab-btn-claude">Claude (no terminal)</button>
-        <button class="tab" role="tab" aria-selected="false" aria-controls="tab-cli" id="tab-btn-cli">Claude Code / Codex</button>
+        <button class="tab active" role="tab" aria-selected="true" aria-controls="tab-claude" id="tab-btn-claude">Claude</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="tab-code" id="tab-btn-code" tabindex="-1">Claude Code</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="tab-codex" id="tab-btn-codex" tabindex="-1">Codex</button>
       </div>
-
       <div class="tab-panel" id="tab-claude" role="tabpanel" aria-labelledby="tab-btn-claude">
         <ol class="steps">
-          <li><a href="qme-env-audit.zip" download>Download the skill</a> <span class="mono muted">(qme-env-audit.zip)</span></li>
-          <li>In Claude, open <span class="mono">Settings → Capabilities → Skills</span> and upload the zip.</li>
-          <li>Start a new chat and type <span class="mono">/qme-env-audit</span>.</li>
+          <li><a href="qme-env-audit.zip" download>Download the skill ZIP</a>.</li>
+          <li>In Claude, enable code execution in Settings → Capabilities. Open Customize → Skills → + → Create skill → Upload a skill, and upload the ZIP.</li>
+          <li>Enable the skill. Start a new chat and ask: <span class="mono">Use qme-env-audit to review my QME AI setup. Start with my tools and workflow. No patient files.</span></li>
         </ol>
-        <div class="note">Needs a Claude Pro, Max, Team, or Enterprise plan with code execution enabled. Run the audit before you put any real case data into that account — the audit itself will tell you whether the account is fit for it.</div>
+        <p class="note">Your organization may restrict custom skills. Installing a skill does not change your account's data-handling terms. <a href="https://support.claude.com/en/articles/12512180-use-skills-in-claude">Claude installation help</a>.</p>
       </div>
-
-      <div class="tab-panel" id="tab-cli" role="tabpanel" aria-labelledby="tab-btn-cli" hidden>
+      <div class="tab-panel" id="tab-code" role="tabpanel" aria-labelledby="tab-btn-code" hidden>
+        <p class="install-lead">Run in the project where you want the skill available:</p>
         <div class="terminal">
-          <div class="terminal-cmd"><span class="prompt">$</span> npx skills@latest add jkgoldst/qme-skills</div>
-          <button class="btn-terminal" id="copy-install" data-cmd="npx skills@latest add jkgoldst/qme-skills">Copy</button>
+          <code class="terminal-cmd">npx skills@latest add jkgoldst/qme-skills --skill qme-env-audit --agent claude-code</code>
+          <button class="btn-terminal copy-install" data-cmd="npx skills@latest add jkgoldst/qme-skills --skill qme-env-audit --agent claude-code">Copy</button>
         </div>
-        <div class="note">Works with compatible skill-aware agents such as Claude Code and Codex. Then run <span class="mono">/qme-env-audit</span>, or <span class="mono">/qme-env-audit --technical</span> for a codebase- or infrastructure-backed review.</div>
+        <p class="note">Start a new Claude Code session and type <code>/qme-env-audit</code>. For deeper code/configuration inspection, use <code>/qme-env-audit --technical</code>. <a href="https://code.claude.com/docs/en/skills">Claude Code skill help</a>.</p>
+      </div>
+      <div class="tab-panel" id="tab-codex" role="tabpanel" aria-labelledby="tab-btn-codex" hidden>
+        <p class="install-lead">Run in the project where you want the skill available:</p>
+        <div class="terminal">
+          <code class="terminal-cmd">npx skills@latest add jkgoldst/qme-skills --skill qme-env-audit --agent codex</code>
+          <button class="btn-terminal copy-install" data-cmd="npx skills@latest add jkgoldst/qme-skills --skill qme-env-audit --agent codex">Copy</button>
+        </div>
+        <p class="note">Start a new Codex session and ask <code>$qme-env-audit Review my QME AI setup.</code> Add <code>--technical</code> for deeper code/configuration inspection. <a href="https://learn.chatgpt.com/docs/build-skills">Codex skill help</a>.</p>
+      </div>
+      <p class="install-status">Installation guidance checked against vendor documentation. <a href="validation.html">See validation status and remaining runtime checks</a>.</p>
+      <p class="copy-status" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- SAMPLE FINDING -->
+  <section class="sample" id="example">
+    <h2>See what you receive</h2>
+    <p class="lede-sm">A fictional example, with evidence limits visible. <a class="link-accent" href="sample-report.html">Read the complete report →</a></p>
+    <div class="finding">
+      <div class="finding-head">
+        <span class="finding-label">AUDIT OUTPUT · /qme-env-audit</span>
+        <span class="pill-danger">P1</span>
+      </div>
+      <div class="finding-body">
+        <div class="finding-title">Review identifying content in notifications</div>
+        <div class="finding-status"><span class="muted">Evidence:</span> <span class="verified"><span class="dot"></span>VERIFIED</span></div>
+        <dl class="finding-fields">
+          <dt>EVIDENCE</dt><dd>E1: synthetic notification fixture, revision demo-7, reviewed 2026-10-10. The fixture contains identifying fields; real delivery and recipient access were not inspected.</dd>
+          <dt>WHY IT MATTERS</dt><dd>If this template is used for real cases, identifying content enters the notification path. Processor coverage and recipient access remain unknown.</dd>
+          <dt>RECOMMENDED ACTION</dt><dd>Ask the operator to remove unnecessary identifiers and provide scoped access/processor evidence. Recheck the deployed notification template.</dd>
+        </dl>
+        <div class="finding-foot">Priority: <span class="danger">P1</span> · Contain → Consolidate → Harden → Verify → Scale</div>
       </div>
     </div>
+    <div class="foot-note">One finding from a fictional interview and evidence review. This is an authored example, not a claim of live inspection or model performance.</div>
   </section>
 
   <!-- WHAT GOOD LOOKS LIKE -->
@@ -109,7 +147,7 @@
       </div>
 
       <ol class="controls">
-        <li><span class="idx">01</span><span>Each person has an individual identity — no shared logins.</span></li>
+        <li><span class="idx">01</span><span>Each person has an individual identity: no shared logins.</span></li>
         <li><span class="idx">02</span><span>Case data stays inside a known, bounded environment.</span></li>
         <li><span class="idx">03</span><span>Model and vendor access is explicit, not assumed.</span></li>
         <li><span class="idx">04</span><span>PHI does not leak through convenience tools like email or chat.</span></li>
@@ -123,45 +161,24 @@
   <!-- HOW THE SKILL WORKS -->
   <section class="how">
     <h2>How the skill works</h2>
-    <p class="lede-sm">It asks one question at a time, and keeps a hard line between what's verified, what's reported, and what's still unknown — an assumption is never quietly converted into a pass.</p>
+    <p class="lede-sm">It asks one question at a time and adapts to your role: using an AI service, buying a managed application, or operating software. It separates inspected evidence, reported claims, and unknowns. You can answer “I don’t know.”</p>
 
     <ol class="workflow">
       <li><div class="w-title">Know the boundary</div><div class="w-desc">Map where case data enters, moves, and lives.</div></li>
       <li class="w-arrow" aria-hidden="true"></li>
       <li><div class="w-title">Verify</div><div class="w-desc">Separate what’s proven from what’s merely stated.</div></li>
       <li class="w-arrow" aria-hidden="true"></li>
-      <li><div class="w-title">Fix</div><div class="w-desc">Address the highest-priority gaps first.</div></li>
+      <li><div class="w-title">Plan</div><div class="w-desc">Name priority actions and who can resolve them.</div></li>
       <li class="w-arrow" aria-hidden="true"></li>
-      <li><div class="w-title">Re-check</div><div class="w-desc">Confirm the fix actually closed the gap.</div></li>
+      <li><div class="w-title">Re-check</div><div class="w-desc">Review new evidence after a change.</div></li>
     </ol>
-  </section>
-
-  <!-- SAMPLE FINDING -->
-  <section class="sample">
-    <div class="finding">
-      <div class="finding-head">
-        <span class="finding-label">AUDIT OUTPUT · /qme-env-audit</span>
-        <span class="pill-danger">P0</span>
-      </div>
-      <div class="finding-body">
-        <div class="finding-title">HIGH — PHI may be exposed through external email</div>
-        <div class="finding-status"><span class="muted">Status:</span> <span class="verified"><span class="dot"></span>VERIFIED</span></div>
-        <dl class="finding-fields">
-          <dt>EVIDENCE</dt><dd>Completion messages include patient identifiers in external email bodies.</dd>
-          <dt>WHY IT MATTERS</dt><dd>This creates an unnecessary PHI egress path outside any controlled boundary.</dd>
-          <dt>RECOMMENDED ACTION</dt><dd>Remove patient identifiers from email and require authenticated access for case materials.</dd>
-        </dl>
-        <div class="finding-foot">Priority: <span class="danger">P0</span> · Contain → Consolidate → Harden → Verify → Scale</div>
-      </div>
-    </div>
-    <div class="foot-note">One finding among many the skill produces from a single environment scan. Example output.</div>
   </section>
 
   <!-- OPERATING MODEL -->
   <section class="band">
     <div class="band-inner wide">
       <h2>Choose your operating model</h2>
-      <p class="lede-sm">Both paths meet the same operational standard. The only question is who carries the operational responsibility.</p>
+      <p class="lede-sm">The review can help clarify responsibilities in either model. Installing the skill does not implement controls or establish that an environment meets a standard.</p>
 
       <div class="cards">
         <div class="card">
@@ -170,7 +187,7 @@
           <div class="card-lines">
             <div>You own the infrastructure and controls.</div>
             <div>You manage storage, access, and retention.</div>
-            <div>You wire up integrations yourself.</div>
+            <div>You decide which integrations to use and verify their boundaries.</div>
             <div>The open skill remains fully usable.</div>
           </div>
         </div>
@@ -178,17 +195,24 @@
           <div class="eyebrow accent">MANAGED <span class="tag">TRESA</span></div>
           <h3>Managed by Tresa</h3>
           <div class="card-lines">
-            <div>Same operational standard as above.</div>
-            <div>Infrastructure and controls operated for you.</div>
-            <div>Storage, access, retention handled continuously.</div>
-            <div>You still see what's verified and what isn't.</div>
+            <div>Ask which controls Tresa operates and which remain yours.</div>
+            <div>Review the scope of the managed application and its processing paths.</div>
+            <div>Request current evidence for storage, access, retention, and recovery.</div>
+            <div>Use the same evidence labels to distinguish claims from inspected controls.</div>
           </div>
-          <a class="link-accent" href="https://app.tresagroup.com/signup">See the managed implementation →</a>
+          <a class="link-accent" href="#about">Understand the Tresa relationship →</a>
         </div>
       </div>
     </div>
   </section>
 
+  <section class="how" id="about">
+    <h2>About this project</h2>
+    <p class="lede-sm">Maintained by the team behind Tresa. The open skill is independently usable; using Tresa is optional. You can inspect, adapt, and share it under the MIT license.</p>
+    <p class="lede-sm">This is an early draft. The fictional example shows the intended deliverable. Installation checks and behavioral evaluations are tracked separately so you can see what has actually been tested.</p>
+    <div class="cta-row"><a class="btn-outline" href="https://github.com/jkgoldst/qme-skills">Read the source</a><a class="btn-outline" href="validation.html">Read validation status</a></div>
+    <p class="foot-note">Considering the managed application? <a href="https://app.tresagroup.com/signup">Tresa signup</a>. Request current scope, agreements, and control evidence before deciding whether it fits your workflow.</p>
+  </section>
   <!-- NEXT STAGE -->
   <section class="next">
     <div class="next-title">Next → Master the Record <span class="soon">coming</span></div>

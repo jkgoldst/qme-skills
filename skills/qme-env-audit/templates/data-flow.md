@@ -1,19 +1,13 @@
 # Current-State Data Flow
 
-Use this template after the interview. Replace placeholders with actual systems and evidence labels.
+Use this template after the interview. Replace placeholders with actual systems and evidence labels. Draw each current-state edge only when an evidence ID establishes both endpoints and the action; label the edge VERIFIED or REPORTED with that ID. Record hypothetical or UNKNOWN paths separately from the diagram. Retain the granularity actually supplied: a notification renderer does not establish a worker architecture, and a finalization requirement does not establish a completed finalization path. A physician using one service may need only a device, service, and export path. Record the audit host and report storage as a separate path. When a destination is supplied but its source is unstated, record the destination and unknown source in prose or the inventory. Keep hypothetical credential reachability out of the current-state diagram; describe it as an unresolved risk question.
 
-```mermaid
-flowchart LR
-    USER[QME / Practice User] --> APP[Web App]
-    APP --> STORE[Case Storage]
-    APP --> DB[Structured PHI Database]
-    APP --> WORKER[Processing / Skill Runtime]
-    WORKER --> MODEL[AI Model Provider]
-    WORKER --> DB
-    WORKER --> STORE
-    APP --> EMAIL[Email / Notification Provider]
-    APP --> ANALYTICS[Analytics / Telemetry]
-```
+Build a path table from evidence before drawing a diagram:
+
+| Evidence ID | Established source | Action/data | Established destination |
+|---|---|---|---|
+
+Include an edge only from a complete row. A reported laptop download with no named source belongs in the inventory and unknowns, not an edge from a guessed store or app. A diagram is optional; a short path table is enough for a limited review.
 
 ## Trust boundaries
 
@@ -26,6 +20,8 @@ Document at least:
 - PHI boundary ↔ PHI-blind external services
 
 ## Data inventory
+
+Record established account/control owners with their evidence IDs, or UNKNOWN. Put recommended action owners in the action plan instead. Components and subprocessors are different inventories. Preserve the stated comparison when recording relationships: a separate store establishes a component boundary; vendor distinctness requires a named comparison. A configuration pointing at production establishes a connection and broken isolation, while completed reads or writes remain UNKNOWN until reported or observed. Describe possible access or alteration as risk, conditional on permissions. List a component as an external vendor only when evidence establishes that relationship; otherwise keep its vendor/owner UNKNOWN.
 
 | Component | Vendor / owner | Data handled | PHI? | Region | Contract/BAA status | Evidence level |
 |---|---|---|---|---|---|---|

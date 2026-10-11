@@ -1,11 +1,9 @@
 (function () {
   var root = document.documentElement;
-
-  // Theme toggle (persisted). Default follows prefers-color-scheme via CSS.
   var themeBtn = document.getElementById('theme-toggle');
   function isDark() {
-    var t = root.dataset.theme;
-    if (t) return t === 'dark';
+    var theme = root.dataset.theme;
+    if (theme) return theme === 'dark';
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   }
   function syncThemeLabel() { themeBtn.textContent = isDark() ? 'Light' : 'Dark'; }
@@ -17,7 +15,6 @@
   });
   syncThemeLabel();
 
-  // Mobile nav
   var navBtn = document.getElementById('mobile-nav-toggle');
   var nav = document.getElementById('mobile-nav');
   navBtn.addEventListener('click', function () {
@@ -26,27 +23,46 @@
     navBtn.setAttribute('aria-expanded', String(open));
   });
 
-  // Install tabs
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
-  tabs.forEach(function (tab) {
-    tab.addEventListener('click', function () {
-      tabs.forEach(function (t) {
-        var on = t === tab;
-        t.classList.toggle('active', on);
-        t.setAttribute('aria-selected', String(on));
-        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
-      });
+  function activate(tab) {
+    tabs.forEach(function (item) {
+      var selected = item === tab;
+      item.classList.toggle('active', selected);
+      item.setAttribute('aria-selected', String(selected));
+      item.tabIndex = selected ? 0 : -1;
+      document.getElementById(item.getAttribute('aria-controls')).hidden = !selected;
+    });
+  }
+  tabs.forEach(function (tab, index) {
+    tab.addEventListener('click', function () { activate(tab); });
+    tab.addEventListener('keydown', function (event) {
+      var next;
+      if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+      if (event.key === 'ArrowLeft') next = (index + tabs.length - 1) % tabs.length;
+      if (event.key === 'Home') next = 0;
+      if (event.key === 'End') next = tabs.length - 1;
+      if (next === undefined) return;
+      event.preventDefault();
+      activate(tabs[next]);
+      tabs[next].focus();
     });
   });
 
-  // Copy install command
-  var copyBtn = document.getElementById('copy-install');
-  var copyTimer;
-  copyBtn.addEventListener('click', function () {
-    var cmd = copyBtn.getAttribute('data-cmd');
-    if (navigator.clipboard) navigator.clipboard.writeText(cmd).catch(function () {});
-    copyBtn.textContent = 'Copied';
-    clearTimeout(copyTimer);
-    copyTimer = setTimeout(function () { copyBtn.textContent = 'Copy'; }, 1800);
+  var status = document.querySelector('.copy-status');
+  document.querySelectorAll('.copy-install').forEach(function (button) {
+    var timer;
+    button.addEventListener('click', async function () {
+      try {
+        if (!navigator.clipboard) throw new Error('Clipboard unavailable');
+        await navigator.clipboard.writeText(button.dataset.cmd);
+        button.textContent = 'Copied';
+        status.textContent = 'Install command copied.';
+      } catch (e) {
+        button.textContent = 'Copy failed';
+        status.textContent = 'Could not copy. Select and copy the command above.';
+      }
+      clearTimeout(timer);
+      timer = setTimeout(function () { button.textContent = 'Copy'; }, 1800);
+    });
   });
 })();
