@@ -1,6 +1,6 @@
 # Current-State Data Flow
 
-Use this template after the interview. Replace placeholders with actual systems and evidence labels.
+Use this template after the interview. Replace placeholders with actual systems and evidence labels. The diagram below illustrates possible components, not an assumed architecture. Delete unused nodes and edges. Label each retained path VERIFIED, REPORTED, or UNKNOWN and cite its evidence ID. A physician using one service may need only a device, service, and export path. Record the audit host and report storage as a separate path.
 
 ```mermaid
 flowchart LR
