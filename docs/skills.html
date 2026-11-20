@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skills. MedLegal AI Hero.</title>
+<meta name="description" content="Free, practical AI skills for physicians doing medical-legal work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('qme-theme');
+      if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="./">MedLegal AI Hero</a>
+  <nav class="nav" aria-label="Site">
+    <a href="start-here.html">Start Here</a>
+    <a href="skills.html" aria-current="page">Skills</a>
+    <a href="https://github.com/jkgoldst/qme-skills" target="_blank" rel="noopener">Open Source</a>
+  </nav>
+  <div class="top-actions">
+    <button class="btn-pill" id="feedback-open">Feedback</button>
+    <button class="btn-pill" id="theme-toggle" aria-label="Toggle dark mode">Dark</button>
+  </div>
+</header>
+
+<main class="main">
+
+  <section class="hero hero-sub">
+    <div class="eyebrow">Skills</div>
+    <h1>Free skills for medical-legal work.</h1>
+    <p class="lede">Each skill is a set of reusable instructions that teaches an AI tool one medical-legal task. Use them in the AI tool you already have. Try each one on a fictional case first.</p>
+  </section>
+
+  <section class="path">
+    <div class="path-grid">
+      <a class="path-card" href="case-facts.html">
+        <div class="path-step">Skill #1</div>
+        <h3 class="mono">/case-facts</h3>
+        <div class="path-sub">Available now</div>
+        <div class="path-desc">Checks names, dates, claim numbers, and parties across your case documents. Shows what agrees, what conflicts, and what's missing, with the source for every value.</div>
+        <div class="m-link">Explore /case-facts</div>
+      </a>
+      <div class="path-card soon">
+        <div class="path-step">Coming</div>
+        <h3>More Skills Coming</h3>
+        <div class="path-sub">A growing library of practical workflows</div>
+        <div class="path-desc">Records review, report critique, deposition preparation, and other reusable skills.</div>
+      </div>
+    </div>
+    <p class="skills-more">New to AI in medical-legal work? <a href="start-here.html">Read the Start Here guide first.</a></p>
+  </section>
+
+  <details class="tech">
+    <summary>For technical users</summary>
+    <div class="tech-body">
+      <p>These are Agent Skills: a folder with a <span class="mono">SKILL.md</span> and supporting files, MIT licensed, source on <a href="https://github.com/jkgoldst/qme-skills" target="_blank" rel="noopener">GitHub</a>.</p>
+      <p>Copy a skill folder from <span class="mono">skills/</span> into your agent's skills folder (for Claude Code, <span class="mono">~/.claude/skills/</span>), then run it by name, for example <span class="mono">/case-facts</span>.</p>
+    </div>
+  </details>
+
+</main>
+
+<footer class="foot">
+  <div class="foot-cols">
+    <div>
+      <h3>Learn</h3>
+      <ul>
+        <li><a href="start-here.html">Start Here guide</a></li>
+        <li><a href="case-facts.html">/case-facts</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Agents</h3>
+      <ul>
+        <li><a href="sitemap.md" target="_blank" rel="noopener">sitemap.md</a></li>
+        <li><a href="llms.txt" target="_blank" rel="noopener">llms.txt</a></li>
+        <li><a href="skills.md" target="_blank" rel="noopener">skills.md</a></li>
+        <li><a href="rss.xml" target="_blank" rel="noopener">rss.xml</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-line">MedLegal AI Hero is an open project from Tresa. MIT licensed.</div>
+</footer>
+
+<dialog class="feedback" id="feedback">
+  <form method="dialog" class="feedback-form" id="feedback-form" action="https://formspree.io/f/FORM_ID" data-endpoint="https://formspree.io/f/FORM_ID">
+    <div class="feedback-head"><span>Feedback</span><button type="button" class="btn-pill" id="feedback-close" aria-label="Close">Close</button></div>
+    <label>What would make this more useful?<textarea name="message" rows="5" required></textarea></label>
+    <label>Email, if you want a reply<input type="email" name="email" autocomplete="email"></label>
+    <input type="hidden" name="page" value="">
+    <div class="feedback-foot">
+      <button type="submit" class="btn-primary">Send</button>
+      <span class="note">Goes to Formspree, then to us. No case material.</span>
+    </div>
+  </form>
+  <div class="feedback-done" id="feedback-done" hidden>Thank you. Read and appreciated.</div>
+</dialog>
+
+<script src="site.js"></script>
+</body>
+</html>

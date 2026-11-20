@@ -1,7 +1,6 @@
 (function () {
   var root = document.documentElement;
 
-  // Theme toggle (persisted). Default follows prefers-color-scheme via CSS.
   var themeBtn = document.getElementById('theme-toggle');
   function isDark() {
     var t = root.dataset.theme;
@@ -17,36 +16,63 @@
   });
   syncThemeLabel();
 
-  // Mobile nav
-  var navBtn = document.getElementById('mobile-nav-toggle');
-  var nav = document.getElementById('mobile-nav');
-  navBtn.addEventListener('click', function () {
-    var open = nav.hidden;
-    nav.hidden = !open;
-    navBtn.setAttribute('aria-expanded', String(open));
-  });
-
-  // Install tabs
-  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
-  tabs.forEach(function (tab) {
-    tab.addEventListener('click', function () {
-      tabs.forEach(function (t) {
-        var on = t === tab;
-        t.classList.toggle('active', on);
-        t.setAttribute('aria-selected', String(on));
-        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
-      });
+  Array.prototype.slice.call(document.querySelectorAll('.copy-cmd')).forEach(function (btn) {
+    var timer;
+    btn.addEventListener('click', function () {
+      var cmd = btn.getAttribute('data-cmd');
+      if (navigator.clipboard) navigator.clipboard.writeText(cmd).catch(function () {});
+      btn.textContent = 'Copied';
+      clearTimeout(timer);
+      timer = setTimeout(function () { btn.textContent = 'Copy'; }, 1800);
     });
   });
 
-  // Copy install command
-  var copyBtn = document.getElementById('copy-install');
-  var copyTimer;
-  copyBtn.addEventListener('click', function () {
-    var cmd = copyBtn.getAttribute('data-cmd');
-    if (navigator.clipboard) navigator.clipboard.writeText(cmd).catch(function () {});
-    copyBtn.textContent = 'Copied';
-    clearTimeout(copyTimer);
-    copyTimer = setTimeout(function () { copyBtn.textContent = 'Copy'; }, 1800);
-  });
+  var form = document.getElementById('invite-form');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      }).then(function (r) {
+        if (!r.ok) throw new Error('send failed');
+        form.hidden = true;
+        document.getElementById('invite-done').hidden = false;
+      }).catch(function () {
+        btn.disabled = false;
+        btn.textContent = 'Something went wrong. Try again.';
+      });
+    });
+  }
+
+  var fb = document.getElementById('feedback');
+  var fbOpen = document.getElementById('feedback-open');
+  if (fb && fbOpen && fb.showModal) {
+    var fbForm = document.getElementById('feedback-form');
+    fbOpen.addEventListener('click', function () {
+      fbForm.querySelector('[name="page"]').value = location.pathname;
+      fb.showModal();
+    });
+    document.getElementById('feedback-close').addEventListener('click', function () { fb.close(); });
+    fbForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = fbForm.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      fetch(fbForm.getAttribute('data-endpoint'), {
+        method: 'POST',
+        body: new FormData(fbForm),
+        headers: { Accept: 'application/json' }
+      }).then(function (r) {
+        if (!r.ok) throw new Error('send failed');
+        fbForm.hidden = true;
+        document.getElementById('feedback-done').hidden = false;
+      }).catch(function () {
+        btn.disabled = false;
+        btn.textContent = 'Something went wrong. Try again.';
+      });
+    });
+  }
 })();

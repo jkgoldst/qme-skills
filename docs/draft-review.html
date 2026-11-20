@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Full draft review, by invitation. MedLegal AI Hero.</title>
+<meta name="description" content="Your draft, checked against the interview transcript, the records, and itself. Every finding points at the sentence and the source it conflicts with.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('qme-theme');
+      if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="./">MedLegal AI Hero</a>
+  <nav class="nav" aria-label="Site">
+    <a href="./">Start Here</a>
+    <a href="skills.html">Skills</a>
+    <a href="https://github.com/jkgoldst/qme-skills" target="_blank" rel="noopener">Open Source</a>
+    <a href="draft-review.html" aria-current="page">Tooling</a>
+  </nav>
+  <div class="top-actions">
+    <button class="btn-pill" id="feedback-open">Feedback</button>
+    <button class="btn-pill" id="theme-toggle" aria-label="Toggle dark mode">Dark</button>
+  </div>
+</header>
+
+<main class="main">
+
+  <section class="hero hero-sub">
+    <div class="eyebrow">At the draft</div>
+    <h1>Full draft review</h1>
+    <p class="lede">Your draft, checked against the interview transcript, the records, and itself. Every finding points at the sentence and the source it conflicts with. You decide what to do with it.</p>
+    <p class="lede-sm">The review runs on a managed case. Today an invitation is a Tresa Trial Physician account; the review runs on the case you bring to it.</p>
+    <div class="cta-row"><a class="btn-primary" href="#invite">Request an invitation</a></div>
+  </section>
+
+  <section class="peer">
+    <p class="peer-line">The Skills check what is in front of you: one document, one table, one date. The review holds the whole case at once, and it is calibrated on the errors physicians actually made in signed reports.</p>
+  </section>
+
+  <section class="section wide">
+    <h2>What it checks</h2>
+    <table class="families">
+      <thead><tr><th>Family</th><th>What is checked</th><th>Evidence standard</th><th></th></tr></thead>
+      <tbody>
+        <tr><td>Same fact, same value</td><td>The patient's name, date of injury, last day worked, pronouns, and causation percentages agree everywhere they appear.</td><td>The draft against itself.</td><td><span class="tag-open">Open</span></td></tr>
+        <tr><td>Document self-consistency</td><td>A fact left as an open question in one section is not asserted as settled in another; a denial is not affirmed elsewhere; no paragraph is repeated.</td><td>The draft against itself.</td><td><span class="tag-managed">Managed</span></td></tr>
+        <tr><td>Draft against interview</td><td>Any fact the draft states differently from what was said in the room.</td><td>The draft against the transcript, adjudicated.</td><td><span class="tag-managed">Managed</span></td></tr>
+        <tr><td>Empty sections and placeholders</td><td>Nothing left blank or bracketed reaches a signed report.</td><td>The draft.</td><td><span class="tag-open">Open</span></td></tr>
+        <tr><td>Date arithmetic</td><td>Years that collide, ages that do not add up, disability that starts before the last day worked, dates in the future.</td><td>The draft against its own anchor dates.</td><td><span class="tag-open">Open</span></td></tr>
+        <tr><td>Denials the transcript contradicts</td><td>The draft says a topic was denied when the interview addressed it.</td><td>The draft against the transcript, adjudicated.</td><td><span class="tag-managed">Managed</span></td></tr>
+        <tr><td>Diagnosis carried through</td><td>The diagnosis you stated, with the specifiers you gave, and not one you ruled out.</td><td>The draft against what you said in the interview.</td><td><span class="tag-managed">Managed</span></td></tr>
+        <tr><td>Judgment stays with you</td><td>P&amp;S status, causation percentages, GAF, WPI, and statutory terms are not asserted where you did not state them.</td><td>The draft against the interview.</td><td><span class="tag-managed">Managed</span></td></tr>
+        <tr><td>GAF near a boundary</td><td>A stated GAF close enough to a rating boundary to be worth confirming.</td><td>The 2005 PDRS table.</td><td><span class="tag-open">Open</span></td></tr>
+        <tr><td>Credibility left unreconciled</td><td>Credibility language, exaggeration notes, and an invalid testing profile all present with no reconciliation.</td><td>The draft.</td><td><span class="tag-managed">Managed</span></td></tr>
+        <tr><td>More than one disability period</td><td>Several disability periods under one diagnosis without the framing that supports it.</td><td>The draft.</td><td><span class="tag-managed">Managed</span></td></tr>
+        <tr><td>GAF and WPI agree</td><td>The stated GAF and WPI match the table.</td><td>The 2005 PDRS table.</td><td><span class="tag-open">Open</span></td></tr>
+        <tr><td>Records fidelity</td><td>What the draft says a record says, against the record.</td><td>The draft against the records.</td><td><span class="tag-managed">Managed</span></td></tr>
+        <tr><td>Duplicate scans</td><td>The same document scanned twice in one side's production.</td><td>The records.</td><td><span class="tag-managed">Managed</span></td></tr>
+        <tr><td>The interview against itself</td><td>Facts stated two ways in the same interview, and whether two different people could explain it.</td><td>The transcript, adjudicated and verified.</td><td><span class="tag-managed">Managed</span></td></tr>
+      </tbody>
+    </table>
+    <p class="foot-note">Open families are the ones you can reproduce from public material; they become Skills as we go. Managed families were built and calibrated on signed reports and stay with the review.</p>
+  </section>
+
+  <section class="start" id="invite">
+    <h2>Request an invitation</h2>
+    <form class="invite" id="invite-form" action="https://formspree.io/f/FORM_ID" method="POST">
+      <label>Name<input type="text" name="name" required autocomplete="name"></label>
+      <label>Email<input type="email" name="email" required autocomplete="email"></label>
+      <label>Practice<input type="text" name="practice" required autocomplete="organization"></label>
+      <button type="submit" class="btn-primary">Request an invitation</button>
+      <div class="note">Submissions go to Formspree, then to us. Name, email, practice only. No case material.</div>
+    </form>
+    <p class="invite-done" id="invite-done" hidden>Thank you. We will be in touch.</p>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot-cols">
+    <div>
+      <h3>Learn</h3>
+      <ul>
+        <li><span class="foot-placeholder" title="Not written yet">Med Legal AI Coding Dictionary</span></li>
+        <li><span class="foot-placeholder" title="Not written yet">AI Med Legal Roadmap</span></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Agents</h3>
+      <ul>
+        <li><a href="sitemap.md" target="_blank" rel="noopener">sitemap.md</a></li>
+        <li><a href="llms.txt" target="_blank" rel="noopener">llms.txt</a></li>
+        <li><a href="skills.md" target="_blank" rel="noopener">skills.md</a></li>
+        <li><a href="rss.xml" target="_blank" rel="noopener">rss.xml</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-line">MedLegal AI Hero is an open project from Tresa. MIT licensed.</div>
+</footer>
+
+<dialog class="feedback" id="feedback">
+  <form method="dialog" class="feedback-form" id="feedback-form" action="https://formspree.io/f/FORM_ID" data-endpoint="https://formspree.io/f/FORM_ID">
+    <div class="feedback-head"><span>Feedback</span><button type="button" class="btn-pill" id="feedback-close" aria-label="Close">Close</button></div>
+    <label>What would make this more useful?<textarea name="message" rows="5" required></textarea></label>
+    <label>Email, if you want a reply<input type="email" name="email" autocomplete="email"></label>
+    <input type="hidden" name="page" value="">
+    <div class="feedback-foot">
+      <button type="submit" class="btn-primary">Send</button>
+      <span class="note">Goes to Formspree, then to us. No case material.</span>
+    </div>
+  </form>
+  <div class="feedback-done" id="feedback-done" hidden>Thank you. Read and appreciated.</div>
+</dialog>
+
+<script src="site.js"></script>
+</body>
+</html>

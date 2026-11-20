@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MedLegal AI Hero</title>
+    <link>https://qmeaihero.com/</link>
+    <description>Free, practical AI skills for physicians doing medical-legal work, from Tresa.</description>
+    <language>en-us</language>
+    <atom:link href="https://qmeaihero.com/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>/case-facts skill released</title>
+      <link>https://qmeaihero.com/case-facts.html</link>
+      <guid>https://qmeaihero.com/case-facts.html</guid>
+      <description>Catch conflicting facts before they make it into the report.</description>
+    </item>
+    <item>
+      <title>Start Here: Set Up AI for Medical-Legal Work</title>
+      <link>https://qmeaihero.com/start-here.html</link>
+      <guid>https://qmeaihero.com/start-here.html</guid>
+      <description>Choose an AI environment, check your safeguards, and try your first skill on a fictional case.</description>
+    </item>
+  </channel>
+</rss>

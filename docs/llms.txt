@@ -1,0 +1,20 @@
+# MedLegal AI Hero
+
+> Free, practical, MIT-licensed AI skills for physicians doing medical-legal work, from Tresa. Each skill runs in the physician's own AI tool; no case material is sent to us.
+
+## Pages
+
+- [Home](https://qmeaihero.com/): what the project is
+- [Start Here](https://qmeaihero.com/start-here.html): a guide to setting up AI for medical-legal work, PHI safeguards, and trying a first skill on a fictional case
+- [Skills](https://qmeaihero.com/skills.html): the published skills
+- [/case-facts](https://qmeaihero.com/case-facts.html): compare identifying and administrative facts across case documents and surface conflicts with source evidence
+
+## Machine-readable
+
+- [skills.md](https://qmeaihero.com/skills.md): one entry per skill with install path
+- [sitemap.md](https://qmeaihero.com/sitemap.md)
+- [rss.xml](https://qmeaihero.com/rss.xml)
+
+## Source
+
+- https://github.com/jkgoldst/qme-skills

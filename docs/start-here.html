@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Start Here: Set Up AI for Medical-Legal Work. MedLegal AI Hero.</title>
+<meta name="description" content="Choose an AI environment, check your safeguards before using real records, and try your first skill on a fictional case.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('qme-theme');
+      if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="./">MedLegal AI Hero</a>
+  <nav class="nav" aria-label="Site">
+    <a href="start-here.html" aria-current="page">Start Here</a>
+    <a href="skills.html">Skills</a>
+    <a href="https://github.com/jkgoldst/qme-skills" target="_blank" rel="noopener">Open Source</a>
+  </nav>
+  <div class="top-actions">
+    <button class="btn-pill" id="feedback-open">Feedback</button>
+    <button class="btn-pill" id="theme-toggle" aria-label="Toggle dark mode">Dark</button>
+  </div>
+</header>
+
+<main class="main">
+
+  <section class="hero hero-sub">
+    <div class="eyebrow">Guide · Start Here</div>
+    <h1>Start Here: Set Up AI for Medical-Legal Work</h1>
+    <p class="lede"><strong>You don't need to be a programmer to use AI in your medical-legal practice. But you do need to know where your data goes.</strong></p>
+  </section>
+
+  <article class="article">
+    <p>AI can help you review records, check case facts, draft reports, and prepare for depositions. Getting started is easier than you might think.</p>
+    <p>This guide will help you choose an AI environment, understand the safeguards you need, and try your first AI skill.</p>
+
+    <h2>1. Choose where you'll use AI</h2>
+    <p>You have a few options. For most physicians, we recommend starting with an existing AI workspace rather than building your own.</p>
+
+    <h3>The easiest path: A clinical AI workspace</h3>
+    <p>Products like ChatGPT for Clinicians provide a familiar chat interface, without requiring you to configure servers, APIs, or other technical infrastructure.</p>
+    <p>If you're an eligible U.S. clinician, ChatGPT for Clinicians is free and offers a way to sign a Business Associate Agreement (BAA) for your individual workspace.</p>
+    <p><a href="https://help.openai.com/en/articles/20001202-chatgpt-for-clinicians" target="_blank" rel="noopener">Get started with ChatGPT for Clinicians</a></p>
+    <p>You can use this environment to explore AI workflows, analyze documents, and experiment with our skills, subject to the workspace's supported features and safeguards.</p>
+    <p><strong>Important:</strong> A clinical AI workspace is not automatically authorized for your patient records. Before uploading protected health information (PHI), confirm that your BAA is executed, your particular workspace and features are covered, and your intended use is permitted.</p>
+
+    <h3>Want more control? Build your own environment.</h3>
+    <p>More technical users can build workflows using AI APIs and cloud infrastructure, such as Amazon Bedrock or appropriately configured OpenAI or Anthropic API services.</p>
+    <p>This gives you more flexibility over how documents are processed, how skills run, and how results are stored.</p>
+    <p>But you'll also take responsibility for configuring and securing more of the system.</p>
+    <p><strong>Our advice:</strong> Start simple. You can learn a tremendous amount without building custom infrastructure.</p>
+
+    <h2>2. Check your setup before using real records</h2>
+    <p>Medical-legal case files often contain highly sensitive information. Before uploading real records, make sure you can answer these questions:</p>
+    <ul>
+      <li><strong>Where does the information go?</strong> Know which providers and services will process or store your files.</li>
+      <li><strong>Is a BAA in place?</strong> If HIPAA applies, confirm the appropriate agreements are executed and cover the services you're using.</li>
+      <li><strong>Will your data be used for model training?</strong> Verify the applicable policy rather than assuming.</li>
+      <li><strong>Who can access your information?</strong> Check account access, sharing permissions, and any connected tools.</li>
+      <li><strong>What happens to your files afterward?</strong> Understand retention, deletion, and backup policies.</li>
+      <li><strong>Is this use authorized?</strong> Confirm any practice, organizational, contractual, and applicable legal requirements.</li>
+    </ul>
+    <p>A BAA is important, but it isn't a certificate of HIPAA compliance. And turning off model training doesn't establish that an environment is appropriate for PHI.</p>
+    <p class="callout">If you can't establish that your setup is authorized for real patient information, use fictional case files until you can.</p>
+
+    <h2>3. Start with a fictional case</h2>
+    <p>The easiest way to learn AI is to try something useful.</p>
+    <p>Our skills are reusable instructions that teach an AI tool how to perform a particular task. They're designed to make common medical-legal workflows more systematic, transparent, and repeatable.</p>
+    <p>You can experiment without using any real patient information.</p>
+
+    <h3 id="case-facts">Try your first skill: <span class="mono">/case-facts</span></h3>
+    <p>Two documents disagree about an examinee's birth date. Can AI catch the discrepancy before it ends up in the report?</p>
+    <p><span class="mono">/case-facts</span> compares identifying information across case documents and shows you what agrees, what conflicts, and what's missing.</p>
+    <p>It doesn't silently choose between contradictory facts. It shows you the evidence so you can decide.</p>
+    <p><a href="case-facts.html">Explore /case-facts</a></p>
+    <p>Start with the fictional example provided alongside the skill. Follow its installation instructions for your chosen AI tool, run the comparison, and review the findings.</p>
+    <p>Depending on your AI environment, you may install the skill, attach its instructions, or use an equivalent supported workflow. Not every chat product supports slash-command skills directly.</p>
+
+    <h2>4. Keep yourself in the loop</h2>
+    <p>AI is good at processing large amounts of information. That doesn't make every conclusion reliable.</p>
+    <p>A few habits will make your work better:</p>
+    <ul>
+      <li><strong>Check the sources.</strong> Ask where a finding came from, and verify the underlying document.</li>
+      <li><strong>Treat uncertainty as useful information.</strong> An unresolved fact is better than a plausible invention.</li>
+      <li><strong>Review what AI produces.</strong> A polished report is not necessarily a correct report.</li>
+      <li><strong>Keep medical judgment with the physician.</strong> AI can assist your work, but it cannot take responsibility for your opinions.</li>
+    </ul>
+    <p>The objective isn't to let AI make more decisions for you. It's to help you spend more time on the decisions that matter.</p>
+
+    <h2>5. Build from there</h2>
+    <p>Once you're comfortable with one skill, try others.</p>
+    <p>You might use AI to organize a lengthy medical record, prepare questions for an interview, review a draft for internal inconsistencies, or test the reasoning behind an opinion.</p>
+    <p>You don't need to adopt everything at once. Start with a specific task, understand what the AI does well, and learn where it needs supervision.</p>
+
+    <h3>Prefer someone to handle the whole workflow?</h3>
+    <p>These skills are free. You can use them independently, adapt them, or build your own workflows.</p>
+    <p>We also build <a href="https://www.tresagroup.com/" target="_blank" rel="noopener">Tresa</a>, an AI-powered platform for medical-legal evaluations. Tresa handles much more of the end-to-end process, for physicians who would rather focus on their evaluations than configure and manage the tools themselves.</p>
+    <p class="callout">Either way, our goal is the same: help physicians use AI without giving up their standards of quality, safety, and professional judgment.</p>
+
+    <p class="fine">This guide is educational, not legal or compliance advice. Product features, terms, and eligibility can change. Always verify current requirements with your provider and, where appropriate, your organization's privacy or compliance advisor.</p>
+  </article>
+
+</main>
+
+<footer class="foot">
+  <div class="foot-cols">
+    <div>
+      <h3>Learn</h3>
+      <ul>
+        <li><a href="start-here.html">Start Here guide</a></li>
+        <li><a href="case-facts.html">/case-facts</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Agents</h3>
+      <ul>
+        <li><a href="sitemap.md" target="_blank" rel="noopener">sitemap.md</a></li>
+        <li><a href="llms.txt" target="_blank" rel="noopener">llms.txt</a></li>
+        <li><a href="skills.md" target="_blank" rel="noopener">skills.md</a></li>
+        <li><a href="rss.xml" target="_blank" rel="noopener">rss.xml</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-line">MedLegal AI Hero is an open project from Tresa. MIT licensed.</div>
+</footer>
+
+<dialog class="feedback" id="feedback">
+  <form method="dialog" class="feedback-form" id="feedback-form" action="https://formspree.io/f/FORM_ID" data-endpoint="https://formspree.io/f/FORM_ID">
+    <div class="feedback-head"><span>Feedback</span><button type="button" class="btn-pill" id="feedback-close" aria-label="Close">Close</button></div>
+    <label>What would make this more useful?<textarea name="message" rows="5" required></textarea></label>
+    <label>Email, if you want a reply<input type="email" name="email" autocomplete="email"></label>
+    <input type="hidden" name="page" value="">
+    <div class="feedback-foot">
+      <button type="submit" class="btn-primary">Send</button>
+      <span class="note">Goes to Formspree, then to us. No case material.</span>
+    </div>
+  </form>
+  <div class="feedback-done" id="feedback-done" hidden>Thank you. Read and appreciated.</div>
+</dialog>
+
+<script src="site.js"></script>
+</body>
+</html>

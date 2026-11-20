@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>/case-facts. MedLegal AI Hero.</title>
+<meta name="description" content="Catch conflicting facts before they make it into the report. /case-facts compares identifying information across case documents and shows what agrees, what conflicts, and what's missing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('qme-theme');
+      if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="./">MedLegal AI Hero</a>
+  <nav class="nav" aria-label="Site">
+    <a href="start-here.html">Start Here</a>
+    <a href="skills.html" aria-current="page">Skills</a>
+    <a href="https://github.com/jkgoldst/qme-skills" target="_blank" rel="noopener">Open Source</a>
+  </nav>
+  <div class="top-actions">
+    <button class="btn-pill" id="feedback-open">Feedback</button>
+    <button class="btn-pill" id="theme-toggle" aria-label="Toggle dark mode">Dark</button>
+  </div>
+</header>
+
+<main class="main">
+
+  <section class="hero hero-sub">
+    <div class="eyebrow">Skill #1</div>
+    <div class="cmd">/case-facts</div>
+    <h1>Catch conflicting facts before they make it into the report.</h1>
+    <p class="lede">Checks names, dates, claim numbers, and parties across your case documents. Shows what agrees, what conflicts, and what's missing, with the source for every value. It never picks between conflicting values for you.</p>
+    <div class="cta-row">
+      <a class="btn-primary" href="#install">Install and try it</a>
+      <a class="btn-outline" href="https://github.com/jkgoldst/qme-skills/blob/main/skills/case-facts/SKILL.md" target="_blank" rel="noopener">Read the full SKILL.md</a>
+    </div>
+  </section>
+
+  <article class="article">
+    <p>AI can produce a polished report. That doesn't mean it got the facts right.</p>
+    <p>A date from one record. A different spelling of a name in another. Conflicting details about an examinee or a claim. AI often picks one without telling you there was a disagreement.</p>
+    <p>The problem isn't the writing. It's that the underlying facts haven't been reconciled.</p>
+    <p><span class="mono">/case-facts</span> fixes this. It checks the documents in your case file against each other, showing what agrees, what conflicts, and what's missing, before you start drafting.</p>
+
+    <h2>See it in action</h2>
+    <p>Suppose you're preparing a medical-legal evaluation. Two documents disagree about the examinee's date of birth.</p>
+    <table>
+      <thead><tr><th>Source</th><th>Date of birth</th></tr></thead>
+      <tbody>
+        <tr><td>Medical records summary</td><td>April 12, 1971</td></tr>
+        <tr><td>Cover letter</td><td>April 21, 1971</td></tr>
+      </tbody>
+    </table>
+    <p>A typical AI draft might simply use one date. You might not notice the discrepancy until much later.</p>
+    <p><span class="mono">/case-facts</span> flags it instead:</p>
+    <div class="finding">
+      <div class="finding-head"><span class="finding-label">CASE FACTS CHECK</span><span class="pill-danger">CONFLICT</span></div>
+      <div class="finding-body">
+        <div class="finding-title">Date of birth</div>
+        <dl class="finding-fields">
+          <dt>MEDICAL RECORDS SUMMARY SAYS</dt><dd>April 12, 1971</dd>
+          <dt>COVER LETTER SAYS</dt><dd>April 21, 1971</dd>
+          <dt>STATUS</dt><dd>Unresolved</dd>
+          <dt>NEXT STEP</dt><dd>Confirm against a reliable source, such as a photo ID</dd>
+          <dt>DRAFTING VALUE</dt><dd>[CONFIRM: date of birth]</dd>
+        </dl>
+        <div class="finding-foot">All examples are fictional.</div>
+      </div>
+    </div>
+    <p>Until you resolve it, the date stays blank rather than being guessed.</p>
+
+    <h2>When to use it</h2>
+    <p>Run <span class="mono">/case-facts</span> when you've assembled the case file, ideally before the evaluation so you can resolve questions while the examinee is present.</p>
+    <p>Run it again before signing, especially if new records arrive.</p>
+    <p>It's particularly useful when you're:</p>
+    <ul>
+      <li>Preparing to have AI draft a report</li>
+      <li>Reviewing a report before signing</li>
+      <li>Incorporating new documents into an existing case</li>
+    </ul>
+    <p>You don't need to wait until you notice a problem. The point is to catch the inconsistencies you wouldn't otherwise see.</p>
+
+    <h2>How it works</h2>
+    <ol>
+      <li><strong>Give it your case documents.</strong> Provide the available cover letters, medical records summary, and interview transcript.</li>
+      <li><strong>It compares the facts.</strong> The skill looks for inconsistencies in identifying and administrative details: patient name, date of birth, injury dates, employer, claim numbers, attorneys, and other parties. It distinguishes between facts that agree, facts that conflict, and facts that are missing.</li>
+      <li><strong>You resolve questions.</strong> For each conflict, review the evidence or ask the appropriate person. Record the confirmed answer. If you can't establish it, leave it unresolved.</li>
+      <li><strong>Draft from the confirmed facts.</strong> Give your AI drafter the settled facts and instruct it not to replace them with contradictory values from other documents.</li>
+    </ol>
+    <p>The result is a report built on a consistent set of identifying facts, with unresolved questions visible rather than quietly guessed.</p>
+
+    <h2>The important part: it finds, you decide</h2>
+    <p>Not every disagreement is a mistake. And not every mistake can be resolved by looking at another document.</p>
+    <p>Sometimes a photo ID settles a spelling or birth date. Sometimes the patient's account needs to be checked against the records. Sometimes two employers appear in the file and only an attorney can clarify their roles.</p>
+    <p>The skill doesn't decide which source is right. You do.</p>
+    <p>Think of <span class="mono">/case-facts</span> as a way to make uncertainty visible, not a tool for eliminating judgment.</p>
+
+    <h2>What success looks like</h2>
+    <p>After running the skill, you should have:</p>
+    <ul>
+      <li>A clear picture of which identifying facts agree</li>
+      <li>A list of conflicts and missing information worth checking</li>
+      <li>The sources behind each finding</li>
+      <li>A confirmed set of facts to use when drafting</li>
+      <li>Visible placeholders for anything that remains unresolved</li>
+    </ul>
+    <p>The goal isn't to eliminate every blank. It's to avoid putting an unsupported fact into a signed medical-legal report.</p>
+
+    <h2 id="install">Install it and try the fictional case</h2>
+    <p>Start with the fictional example packet: a cover letter, a records summary, and an interview excerpt, with an answer key. No real patient information.</p>
+    <ul>
+      <li><a href="https://github.com/jkgoldst/qme-skills/tree/main/skills/case-facts/examples" target="_blank" rel="noopener">Fictional example packet and answer key</a></li>
+      <li><a href="https://github.com/jkgoldst/qme-skills/tree/main/skills/case-facts" target="_blank" rel="noopener">The skill folder on GitHub</a></li>
+      <li><a href="case-facts.zip">Download the skill as a zip</a></li>
+    </ul>
+    <p><strong>Claude Code and other agents that read skill folders:</strong> copy the <span class="mono">case-facts</span> folder into your skills folder (for Claude Code, <span class="mono">~/.claude/skills/</span>), then type <span class="mono">/case-facts</span>.</p>
+    <p><strong>Chat products:</strong> not every chat product supports slash-command skills. Where yours doesn't, attach <span class="mono">SKILL.md</span> with your documents and ask the AI to follow it.</p>
+    <p class="note">We're still testing installation across AI tools. Tell us what worked and what didn't with the Feedback button.</p>
+
+    <h2>Common questions</h2>
+    <h3>Does it choose the correct fact?</h3>
+    <p>No. It identifies what the documents say and where they disagree. You resolve the conflict using better evidence.</p>
+    <h3>What if the documents all agree?</h3>
+    <p>That's useful too. But agreement isn't proof of accuracy, particularly when multiple documents repeat information from the same original source.</p>
+    <h3>Does it review medical findings or opinions?</h3>
+    <p>No. It focuses on identifying and administrative case facts, not diagnosis, causation, impairment or the defensibility of the medical opinion.</p>
+    <h3>Can I use it with my AI drafting tool?</h3>
+    <p>Yes. The intended workflow is independent of your drafter: reconcile the facts first, then provide the confirmed values as drafting instructions.</p>
+    <h3>Can I upload real patient records?</h3>
+    <p>Only in an AI environment authorized to use protected patient information. The skill itself doesn't provide HIPAA compliance or change your data-handling obligations. See the <a href="start-here.html">Start Here guide</a> for what to check.</p>
+    <h3>Does it guarantee an accurate or compliant report?</h3>
+    <p>No. It's one check in the review process. The physician remains responsible for the final report.</p>
+
+    <h2>Try it</h2>
+    <p>Run <span class="mono">/case-facts</span> on the fictional packet first. Then, in an environment authorized for real records, run it with the documents from your next evaluation.</p>
+    <p>Review the conflicts, confirm what you can, and use the resulting facts as the starting point for your report.</p>
+  </article>
+
+</main>
+
+<footer class="foot">
+  <div class="foot-cols">
+    <div>
+      <h3>Learn</h3>
+      <ul>
+        <li><a href="start-here.html">Start Here guide</a></li>
+        <li><a href="case-facts.html">/case-facts</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Agents</h3>
+      <ul>
+        <li><a href="sitemap.md" target="_blank" rel="noopener">sitemap.md</a></li>
+        <li><a href="llms.txt" target="_blank" rel="noopener">llms.txt</a></li>
+        <li><a href="skills.md" target="_blank" rel="noopener">skills.md</a></li>
+        <li><a href="rss.xml" target="_blank" rel="noopener">rss.xml</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-line">MedLegal AI Hero is an open project from Tresa. MIT licensed.</div>
+</footer>
+
+<dialog class="feedback" id="feedback">
+  <form method="dialog" class="feedback-form" id="feedback-form" action="https://formspree.io/f/FORM_ID" data-endpoint="https://formspree.io/f/FORM_ID">
+    <div class="feedback-head"><span>Feedback</span><button type="button" class="btn-pill" id="feedback-close" aria-label="Close">Close</button></div>
+    <label>What would make this more useful?<textarea name="message" rows="5" required></textarea></label>
+    <label>Email, if you want a reply<input type="email" name="email" autocomplete="email"></label>
+    <input type="hidden" name="page" value="">
+    <div class="feedback-foot">
+      <button type="submit" class="btn-primary">Send</button>
+      <span class="note">Goes to Formspree, then to us. No case material.</span>
+    </div>
+  </form>
+  <div class="feedback-done" id="feedback-done" hidden>Thank you. Read and appreciated.</div>
+</dialog>
+
+<script src="site.js"></script>
+</body>
+</html>

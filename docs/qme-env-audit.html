@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Environment check. MedLegal AI Hero.</title>
+<meta name="description" content="See where case data goes in your AI account, what can be verified right now, and what to fix before you rely on it for real evaluations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('qme-theme');
+      if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="./">MedLegal AI Hero</a>
+  <nav class="nav" aria-label="Site">
+    <a href="./">Start Here</a>
+    <a href="skills.html">Skills</a>
+    <a href="https://github.com/jkgoldst/qme-skills" target="_blank" rel="noopener">Open Source</a>
+    <a href="draft-review.html">Tooling</a>
+  </nav>
+  <div class="top-actions">
+    <button class="btn-pill" id="feedback-open">Feedback</button>
+    <button class="btn-pill" id="theme-toggle" aria-label="Toggle dark mode">Dark</button>
+  </div>
+</header>
+
+<main class="main">
+
+  <section class="hero hero-sub">
+    <div class="eyebrow">Before any of it</div>
+    <h1>Environment check</h1>
+    <div class="cmd">/qme-env-audit</div>
+    <p class="lede">See where case data goes in your AI account, what can be verified right now, and what to fix before you rely on it for real evaluations.</p>
+    <div class="cta-row"><a class="btn-primary" href="#install">Get the environment check</a></div>
+  </section>
+
+  <section class="section">
+    <h2>What happens when you run it</h2>
+    <ol class="numbered">
+      <li>It asks one question at a time about how you and your staff use the account: who logs in, where files go, what is kept, what gets emailed.</li>
+      <li>Each answer is marked verified, reported, or unknown. An assumption is never quietly turned into a pass.</li>
+      <li>You get a short list of findings in priority order, each with the evidence, why it matters for a QME, and the fix.</li>
+      <li>Fix the top items, run it again, and confirm the gap closed.</li>
+    </ol>
+  </section>
+
+  <section class="band">
+    <div class="band-inner">
+      <h2>What good looks like</h2>
+      <ol class="controls">
+        <li><span class="idx">01</span><span>Each person has their own login. No shared accounts.</span></li>
+        <li><span class="idx">02</span><span>Case data stays inside a known, bounded environment.</span></li>
+        <li><span class="idx">03</span><span>Model and vendor access is explicit, not assumed.</span></li>
+        <li><span class="idx">04</span><span>PHI does not leak through convenience tools like email or chat.</span></li>
+        <li><span class="idx">05</span><span>Retention and deletion are decisions, not accidents.</span></li>
+        <li><span class="idx">06</span><span>Backups and recovery are understood before they are needed.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sample">
+    <div class="finding">
+      <div class="finding-head">
+        <span class="finding-label">EXAMPLE OUTPUT · /qme-env-audit</span>
+        <span class="pill-danger">P0</span>
+      </div>
+      <div class="finding-body">
+        <div class="finding-title">HIGH: PHI may be exposed through external email</div>
+        <div class="finding-status"><span class="muted">Status:</span> <span class="verified"><span class="dot"></span>VERIFIED</span></div>
+        <dl class="finding-fields">
+          <dt>EVIDENCE</dt><dd>Completion messages include patient identifiers in external email bodies.</dd>
+          <dt>WHY IT MATTERS</dt><dd>This creates an unnecessary PHI egress path outside any controlled boundary.</dd>
+          <dt>RECOMMENDED ACTION</dt><dd>Remove patient identifiers from email and require authenticated access for case materials.</dd>
+        </dl>
+        <div class="finding-foot">Priority: <span class="danger">P0</span> · Contain, Consolidate, Harden, Verify, Scale</div>
+      </div>
+    </div>
+    <div class="foot-note">One finding among many the check produces from a single environment scan. Example output.</div>
+  </section>
+
+  <section class="section">
+    <h2>What it is not</h2>
+    <p class="lede-sm">This is a readiness check, not legal advice, a HIPAA certification, or a determination that your practice is a Covered Entity or Business Associate.</p>
+  </section>
+
+  <section class="start" id="install">
+    <h2>Get the environment check</h2>
+    <ol class="steps">
+      <li><a href="qme-env-audit.zip" download>Download the environment check</a> <span class="mono muted">(zip)</span></li>
+      <li>In Claude, open <span class="mono">Settings</span>, then <span class="mono">Capabilities</span>, then <span class="mono">Skills</span>, and upload it.</li>
+      <li>Start a new chat and type <span class="mono">/qme-env-audit</span>.</li>
+    </ol>
+    <div class="note">Needs a Claude Pro, Max, Team, or Enterprise plan with code execution turned on. Run it before any real case goes into that account.</div>
+    <div class="compat"><span class="compat-label">Compatibility</span> Claude web and desktop by upload (Pro, Max, Team, Enterprise, with code execution on); Claude Code and Codex by command. Other skill-aware agents untested.</div>
+  </section>
+
+  <details class="tech">
+    <summary>For technical users</summary>
+    <div class="tech-body">
+      <p>An Agent Skill: a folder with a <span class="mono">SKILL.md</span> and reference files, MIT licensed, source on <a href="https://github.com/jkgoldst/qme-skills/tree/main/skills/qme-env-audit" target="_blank" rel="noopener">GitHub</a>.</p>
+      <div class="terminal">
+        <div class="terminal-cmd"><span class="prompt">$</span> npx skills@latest add jkgoldst/qme-skills</div>
+        <button class="btn-terminal copy-cmd" data-cmd="npx skills@latest add jkgoldst/qme-skills">Copy</button>
+      </div>
+      <p>Works in Claude Code, Codex, and other skill-aware agents. Then run <span class="mono">/qme-env-audit</span>, or <span class="mono">/qme-env-audit --technical</span> for a codebase- or infrastructure-backed review.</p>
+    </div>
+  </details>
+
+</main>
+
+<footer class="foot">
+  <div class="foot-cols">
+    <div>
+      <h3>Learn</h3>
+      <ul>
+        <li><span class="foot-placeholder" title="Not written yet">Med Legal AI Coding Dictionary</span></li>
+        <li><span class="foot-placeholder" title="Not written yet">AI Med Legal Roadmap</span></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Agents</h3>
+      <ul>
+        <li><a href="sitemap.md" target="_blank" rel="noopener">sitemap.md</a></li>
+        <li><a href="llms.txt" target="_blank" rel="noopener">llms.txt</a></li>
+        <li><a href="skills.md" target="_blank" rel="noopener">skills.md</a></li>
+        <li><a href="rss.xml" target="_blank" rel="noopener">rss.xml</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-line">MedLegal AI Hero is an open project from Tresa. MIT licensed.</div>
+</footer>
+
+<dialog class="feedback" id="feedback">
+  <form method="dialog" class="feedback-form" id="feedback-form" action="https://formspree.io/f/FORM_ID" data-endpoint="https://formspree.io/f/FORM_ID">
+    <div class="feedback-head"><span>Feedback</span><button type="button" class="btn-pill" id="feedback-close" aria-label="Close">Close</button></div>
+    <label>What would make this more useful?<textarea name="message" rows="5" required></textarea></label>
+    <label>Email, if you want a reply<input type="email" name="email" autocomplete="email"></label>
+    <input type="hidden" name="page" value="">
+    <div class="feedback-foot">
+      <button type="submit" class="btn-primary">Send</button>
+      <span class="note">Goes to Formspree, then to us. No case material.</span>
+    </div>
+  </form>
+  <div class="feedback-done" id="feedback-done" hidden>Thank you. Read and appreciated.</div>
+</dialog>
+
+<script src="site.js"></script>
+</body>
+</html>
